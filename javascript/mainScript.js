@@ -21,9 +21,13 @@ $(document).ready(function() {
 	//$(".page").click(nextPage);
 
 	$('.nextTextButton').click(nextText);
-	$('#firstBubbleChoice').click(nextText);
-	$('#secondBubbleChoice').click(nextPage);
-	$('#thirdBubbleChoice').click(nextPage);
+	$('#firstBubbleChoice1').click(nextText);
+	$('#firstBubbleChoice2').click(nextPage);
+	$('#firstBubbleChoice3').click(nextPage);
+
+	$('#thirdBubbleChoice1').click(nextText);
+	$('#thirdBubbleChoice2').click(nextPage);
+
 
 	function nextPage() {
 		var pageId = parseInt($(".page.active").attr('id').slice(-1));
@@ -65,12 +69,12 @@ $(document).ready(function() {
 
 			switch(actualText) {
 			    case 6:
-			        $('#firstBubbleChoice').css({
+			        $('#firstBubbleChoice1').css({
 				        opacity: 0,
 				        display: 'inline-block'     
 				    }).animate({opacity:1},600);
 
-					$('#secondBubbleChoice').css({
+					$('#firstBubbleChoice2').css({
 				        opacity: 0,
 				        display: 'inline-block'     
 				    }).animate({opacity:1},600);
@@ -78,22 +82,54 @@ $(document).ready(function() {
 			        break;
 
 			    case 7:
-			        $('#firstBubbleChoice').animate({opacity:0},600,function(){
+			        $('#firstBubbleChoice1').animate({opacity:0},600,function(){
 			        	$(this).css({display: 'none'});
 			        });
 
-					$('#secondBubbleChoice').animate({opacity:0},600,function(){
+					$('#firstBubbleChoice2').animate({opacity:0},600,function(){
 			        	$(this).css({display: 'none'});
 			        });
 				    $('.nextTextButton').fadeIn("slow");
 			        break;
 
 			    case 9:
-			        $('#thirdBubbleChoice').css({
+			        $('#firstBubbleChoice3').css({
 				        opacity: 0,
 				        display: 'inline-block'     
 				    }).animate({opacity:1},600);
 				    $('.nextTextButton').fadeOut("slow");
+			        break;
+
+			    default:
+			        break;
+			}
+		}
+
+		if(idText == "thirdBubble") {
+
+			switch(actualText) {
+			    case 2:
+			        $('#thirdBubbleChoice1').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+
+					$('#thirdBubbleChoice2').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+					$('.nextTextButton').fadeOut("slow");
+			        break;
+
+			    case 3:
+			        $('#thirdBubbleChoice1').animate({opacity:0},600,function(){
+			        	$(this).css({display: 'none'});
+			        });
+
+					$('#thirdBubbleChoice2').animate({opacity:0},600,function(){
+			        	$(this).css({display: 'none'});
+			        });
+				    $('.nextTextButton').fadeIn("slow");
 			        break;
 
 			    default:
@@ -162,6 +198,56 @@ $(document).ready(function() {
 					   effrayant. Il me trouble, j'ai l'impression de vivre \
 					   quelque chose d'irréel : Est-ce vraiment pour moi tout \
 					   ça ? <br><br>En tout cas j'espère que ma douleur au dos \
-					   s'envolera !!"	
+					   s'envolera !!",
+		thirdBubble1: "\" Bonjour,<br><br>Haaa c'est vous qui avez remporté le \
+					  concours ! Toutes nos félicitations !!<br><br> Voici \
+					  comment votre journée va se dérouler : Dans un premier \
+					  temps nous vous proposons de passer par un scanner pour \
+					  déceler vos défaillances.",
+		thirdBubble2: "Ensuite nous vous proposerons un catalogue de choix \
+					  favorisant votre restructuration corporelle et \
+					  environnementale.<br><br>On commence ? \"",
+		thirdBubble3: "\"Grâce à NOPEX vous pouvez déceler et soigner n'importe \
+					  quel défaut de santé  ou défaut émotionnel ! Avec 100% de \
+					  réussite NOPEX se place comme le leader mondial des \
+					  technologies pour la santé et le bien être ! Vous ne \
+					  risquez absolument rien !! Vos maux qui vous rongent \
+					  seront apaisés, et si vous n'êtes pas satisfait (ce qui \
+					  n'est encore jamais arrivé) nous vous proposerons de \
+					  nouvelles séances de soins jusqu'à ce que vous soyez \
+					  pleinement convaincu.\""
 	};
 });
+
+
+
+// Put event listeners into place
+window.addEventListener("DOMContentLoaded", function() {
+	// Grab elements, create settings, etc.
+	var canvas = document.getElementById("canvas"),
+		context = canvas.getContext("2d"),
+		video = document.getElementById("video"),
+		videoObj = { "video": true },
+		errBack = function(error) {
+			console.log("Video capture error: ", error.code); 
+		};
+
+	// Put video listeners into place
+	if(navigator.getUserMedia) { // Standard
+		navigator.getUserMedia(videoObj, function(stream) {
+			video.src = stream;
+			video.play();
+		}, errBack);
+	} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+		navigator.webkitGetUserMedia(videoObj, function(stream){
+			video.src = window.webkitURL.createObjectURL(stream);
+			video.play();
+		}, errBack);
+	}
+	else if(navigator.mozGetUserMedia) { // Firefox-prefixed
+		navigator.mozGetUserMedia(videoObj, function(stream){
+			video.src = window.URL.createObjectURL(stream);
+			video.play();
+		}, errBack);
+	}
+}, false);

@@ -147,12 +147,12 @@ body {
     right: 16px;
 }
 
-#firstBubbleChoice, #thirdBubbleChoice{
+#firstBubbleChoice1, #firstBubbleChoice3, #thirdBubbleChoice1{
 	bottom: -60px;
     left: 0px;
 }
 
-#secondBubbleChoice {
+#firstBubbleChoice2, #thirdBubbleChoice2 {
 	bottom: -100px;
     left: 0px;
 }
