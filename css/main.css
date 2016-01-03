@@ -44,17 +44,139 @@ table {
 
 
 
+
+
+
+
+
+@font-face{
+    font-family : "twCenMT";
+    src : url('fonts/TwCenMT.ttf');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 html {
 	height: 100%;
 }
 
 body {
 	height: 100%;
+	background-color: black;
 }
 
 .notDisplayed {
 	display: none;
 }
+
+.page{
+	height: 100%;
+	width: 100%;
+	background-size: 100%;
+}
+
+#page1 {
+	background-image: url(../img/background/scene1FondChambre.png);
+}
+
+/*#page2 {
+	background-image: url(../img/background/scene2ZoomChambre.png);
+}*/
+
+#page2 {
+	background-image: url(../img/background/scene3ExterieurNopex.png);
+}
+
+#page3 {
+	background-image: url(../img/background/scene4FondLaboratoire.png);
+}
+
+#page4 {
+	background-image: url(../img/background/scene5FondScanner.png);
+}
+
+/*#page6 {
+	background-image: url(../img/background/scene6Choix.png);
+}*/
+
+#page7 {
+	background-image: url(../img/background/scene7JeuFond.png);
+}
+
+#page8 {
+	background-image: url(../img/background/scene8FicheRecapitulativeFond.png);
+}
+
+#page9 {
+	background-image: url(../img/background/scene9ReflexionFond.png);
+}
+
+
+.bubbleUpLeft {
+	background-color: rgba(255,255,255,0.7);
+    width: 400px;
+    height: 120px;
+    position: absolute;
+    top: 7%;
+    left: 6%;
+    padding: 20px;
+    padding-bottom: 40px;
+    font-family: twCenMT;
+    color: black;
+}
+
+
+.nextTextButton {
+	height: 21px;
+    width: 11px;
+    position: absolute;
+    background: url(../img/rightArrow.png);
+    background-size: 100%;
+    bottom: 13px;
+    right: 16px;
+}
+
+#firstBubbleChoice, #thirdBubbleChoice{
+	bottom: -60px;
+    left: 0px;
+}
+
+#secondBubbleChoice {
+	bottom: -100px;
+    left: 0px;
+}
+
+.bubbleChoice {
+	display: none;
+	padding: 2px 20px;
+	position: absolute;
+	background-color: rgba(255,255,255,0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .wholePage {
 	height: 100%;
