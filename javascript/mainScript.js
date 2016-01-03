@@ -26,11 +26,16 @@ $(document).ready(function() {
 	$('#thirdBubbleChoice').click(nextPage);
 
 	function nextPage() {
-		var pageId = parseInt($(this).parents(".page").attr('id').slice(-1));
+		var pageId = parseInt($(".page.active").attr('id').slice(-1));
 		var nextPageId = pageId + 1;
+
+		$("#page" + pageId).removeClass("active");
+		$("#page" + nextPageId).addClass("active");
+
 
 		$("#page" + pageId).fadeToggle(1000, function(){
 			$("#page" + nextPageId).fadeToggle(1500);
+			$('.nextTextButton').fadeIn("slow");
 		});
 		// $("#page" + pageId).animate({opacity:0},600,function(){
 		// 			$(this).css({display: 'none'});
@@ -48,51 +53,58 @@ $(document).ready(function() {
 		actualText++;
 		var newIdText = idText + actualText;
 
-		divText.html("");
-		divText.html(firstBubble[newIdText]);
-		divText.attr('id', newIdText);
+		if(allTextExperience[newIdText]) {
+			divText.html("");
+			divText.html(allTextExperience[newIdText]);
+			divText.attr('id', newIdText);
+		}else{
+			nextPage();
+		}
 
-		switch(actualText) {
-		    case 6:
-		        $('#firstBubbleChoice').css({
-			        opacity: 0,
-			        display: 'inline-block'     
-			    }).animate({opacity:1},600);
+		if(idText == "firstBubble") {
 
-				$('#secondBubbleChoice').css({
-			        opacity: 0,
-			        display: 'inline-block'     
-			    }).animate({opacity:1},600);
-			    $('.nextTextButton').fadeOut("slow");
-		        break;
+			switch(actualText) {
+			    case 6:
+			        $('#firstBubbleChoice').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
 
-		    case 7:
-		        $('#firstBubbleChoice').animate({opacity:0},600,function(){
-		        	$(this).css({display: 'none'});
-		        });
+					$('#secondBubbleChoice').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+				    $('.nextTextButton').fadeOut("slow");
+			        break;
 
-				$('#secondBubbleChoice').animate({opacity:0},600,function(){
-		        	$(this).css({display: 'none'});
-		        });
-			    $('.nextTextButton').fadeIn("slow");
-		        break;
+			    case 7:
+			        $('#firstBubbleChoice').animate({opacity:0},600,function(){
+			        	$(this).css({display: 'none'});
+			        });
 
-		    case 9:
-		        $('#thirdBubbleChoice').css({
-			        opacity: 0,
-			        display: 'inline-block'     
-			    }).animate({opacity:1},600);
-			    $('.nextTextButton').fadeOut("slow");
-		        break;
+					$('#secondBubbleChoice').animate({opacity:0},600,function(){
+			        	$(this).css({display: 'none'});
+			        });
+				    $('.nextTextButton').fadeIn("slow");
+			        break;
 
-		    default:
-		        break;
+			    case 9:
+			        $('#thirdBubbleChoice').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+				    $('.nextTextButton').fadeOut("slow");
+			        break;
+
+			    default:
+			        break;
+			}
 		}
 
 	}
 
 
-	var firstBubble = {
+	var allTextExperience = {
 		firstBubble1: "\"C’est l’heure de se lever,<br> pour prendre ton petit\
 					  déjeuner,<br> tes mails sont à checker\"<br><br> Ahhhh… \
 					  où est cet holo réveil de malheur, il va me déglutir toutes \
@@ -145,15 +157,11 @@ $(document).ready(function() {
 					  l'industrie.",
 		firstBubble9: "Leader mondial des technologies et services pour \
 					  l'industrie et la santé<br><br>4 700 employés,<br>350 M€ \
-					  de budget par an,<br>200 nouveaux brevets déposés par an"
-	};
-
-	var secondBubble = {
-		secongBubble1: "Whaouhh ça claque, ce batiment est immense, incroyable, \
+					  de budget par an,<br>200 nouveaux brevets déposés par an",
+		secondBubble1: "Whaouhh ça claque, ce batiment est immense, incroyable, \
 					   effrayant. Il me trouble, j'ai l'impression de vivre \
 					   quelque chose d'irréel : Est-ce vraiment pour moi tout \
-					   ça ? <br>En tout cas j'espère que ma douleur au dos \
-					   s'envolera !!"
-	}
-	
+					   ça ? <br><br>En tout cas j'espère que ma douleur au dos \
+					   s'envolera !!"	
+	};
 });
