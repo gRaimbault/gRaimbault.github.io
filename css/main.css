@@ -84,6 +84,7 @@ body {
 	height: 100%;
 	width: 100%;
 	background-size: cover;
+	background-attachment:scroll;
 }
 
 #page1 {
