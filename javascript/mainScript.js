@@ -137,6 +137,38 @@ $(document).ready(function() {
 			}
 		}
 
+		if(idText == "fifthBubble") {
+
+			switch(actualText) {
+			    case 2:
+			    	$('#fifthBubbleChoice1').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+
+					$('#fifthBubbleChoice2').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+					$('.nextTextButton').fadeOut("slow");
+			        break;
+
+			    case 3:
+			    	$('#fifthBubbleChoice1').animate({opacity:0},600,function(){
+			        	$(this).css({display: 'none'});
+			        });
+
+					$('#fifthBubbleChoice2').animate({opacity:0},600,function(){
+			        	$(this).css({display: 'none'});
+			        });
+				    $('.nextTextButton').fadeIn("slow");
+			        break;
+
+			    default:
+			        break;
+			}
+		}
+
 	}
 
 
@@ -215,39 +247,19 @@ $(document).ready(function() {
 					  seront apaisés, et si vous n'êtes pas satisfait (ce qui \
 					  n'est encore jamais arrivé) nous vous proposerons de \
 					  nouvelles séances de soins jusqu'à ce que vous soyez \
-					  pleinement convaincu.\""
+					  pleinement convaincu.\"",
+		fifthBubble1: "Nous avons observé au scan que vous ne possédiez pas \
+					   la vision augmentée. M..M..Mais, c’est IMPENSAAABLE !! \
+					   À l’heure actuelle c’est un outil qui est devenu \
+					   AB-SO-LU-MENT indispensable à l’humain. Nous vous \
+					   proposons donc deux manières de solutionner ce \
+					   problème : ",
+		fifthBubble2: "Vous pouvez choisir entre une implantation \
+					   d’œil bionique vous donnant les informations que vous \
+					   voulez en temps réel (consulter internet, direction \
+					   gps,  prise de photo, appel & communication,  vision \
+					   de danger…etc) ou l’apposition de lunettes \
+					   visiaugmentées à reconnaissance vocale. Que \
+					   voulez-vous faire ?"
 	};
 });
-
-
-
-// Put event listeners into place
-window.addEventListener("DOMContentLoaded", function() {
-	// Grab elements, create settings, etc.
-	var canvas = document.getElementById("canvas"),
-		context = canvas.getContext("2d"),
-		video = document.getElementById("video"),
-		videoObj = { "video": true },
-		errBack = function(error) {
-			console.log("Video capture error: ", error.code); 
-		};
-
-	// Put video listeners into place
-	if(navigator.getUserMedia) { // Standard
-		navigator.getUserMedia(videoObj, function(stream) {
-			video.src = stream;
-			video.play();
-		}, errBack);
-	} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
-		navigator.webkitGetUserMedia(videoObj, function(stream){
-			video.src = window.webkitURL.createObjectURL(stream);
-			video.play();
-		}, errBack);
-	}
-	else if(navigator.mozGetUserMedia) { // Firefox-prefixed
-		navigator.mozGetUserMedia(videoObj, function(stream){
-			video.src = window.URL.createObjectURL(stream);
-			video.play();
-		}, errBack);
-	}
-}, false);
