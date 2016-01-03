@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	var bodyHeight = $("body").height();
+	/*var bodyHeight = $("body").height();
 	var bodyWidth = $("body").width();
 
 	if (bodyHeight < bodyWidth) {
@@ -11,7 +11,7 @@ $(document).ready(function() {
 		$(".circle").width(bodyWidth);
 		$(".circle").height(bodyWidth);
 		$(".circle").css("border-radius", bodyWidth);
-	}
+	}*/
 
 
 	$(".imgInCircle").click(function() {
