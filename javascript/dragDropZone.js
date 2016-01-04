@@ -1,36 +1,5 @@
-<!DOCTYPE html> 
-<html> 
-	<head> 
-		<meta charset="utf-8"  /> 
-		<title>Déplacer un élément à la souris</title>
+$(document).ready(function() {
 
-		<style>
-			#square 
-			{ 
-				position:absolute; 
-				height:100px; 
-				width:100px; 
-				background-color:red; 
-			} 
-			
-			#coucou {
-				position:relative;
-				margin-top:50px;
-				margin-left:50px;
-				width: 400px;
-				height: 400px;
-				background-color:green;
-			}
-		</style> 
-	</head> 
-	<body> 
-		<div id="coucou">
-			<div id="square" ontouchmove="on_mouse_down_square(event)"></div> 
-		</div>	
-	</body> 
-</html> 
-
-<script type="text/javascript"> 
 	var mouse_down = false; 
 
 	function on_mouse_down_square(event) { 
@@ -69,5 +38,5 @@
 		}
 
 	  } 
-	} 
-</script>
+	}
+}
