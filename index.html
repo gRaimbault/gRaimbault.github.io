@@ -25,7 +25,7 @@
 	</head> 
 	<body> 
 		<div id="coucou">
-			<div id="square" ontouchmove="on_mouse_down_square(event)"></div> 
+			<div id="square" ontouchstart="on_mouse_down_square(event)"></div> 
 		</div>	
 	</body> 
 </html> 
@@ -41,30 +41,30 @@
 	 mouse_down=false; 
 	} 
 
-	document.onmousemove = on_mouse_move; 
+	document.ontouchmove = on_mouse_move; 
 
-	document.onmouseup = on_mouse_up; 
+	document.ontouchend = on_mouse_up; 
 
 	function on_mouse_move(event) { 
 	  if (mouse_down === true) { 
-		if(event.clientX-50<=0){
+		if(event.touches[0].clientX-50<=0){
 			document.querySelector('#square').style.left = 0+'px';
-		} else if(event.clientX-50>300) {
+		} else if(event.touches[0].clientX-50>300) {
 			document.querySelector('#square').style.left = 300+'px'; 
 		} else {
-			document.querySelector('#square').style.left = event.clientX-50+'px';
+			document.querySelector('#square').style.left = event.touches[0].clientX-50+'px';
 		}
 		
-		if(event.clientY-50<=0){
+		if(event.touches[0].clientY-50<=0){
 			document.querySelector('#square').style.top = 0+'px';
-		} else if(event.clientY-50>300) {
+		} else if(event.touches[0].clientY-50>300) {
 			document.querySelector('#square').style.top = 300+'px'; 
 		} else {
-			document.querySelector('#square').style.top = event.clientY-50+'px';
+			document.querySelector('#square').style.top = event.touches[0].clientY-50+'px';
 		}
 		
 		
-		if(event.clientY-50>=0 && event.clientY-50<300) {
+		if(event.touches[0].clientY-50>=0 && event.touches[0].clientY-50<300) {
 			document.querySelector('#square').style.top = event.clientY-50+'px'; 
 		}
 
