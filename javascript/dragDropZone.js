@@ -2,7 +2,9 @@ $(document).ready(function() {
 
 	var mouse_down = false; 
 
-	$('.connectedGlass.healObject').on('touchstart', function(e) {
+	$('.healObject').on('touchstart', function(e) {
+		$('.healObject').removeClass('active');
+		$(this).addClass('active');
 		on_mouse_down_square(e);
 	});
 
@@ -21,25 +23,27 @@ $(document).ready(function() {
 
 	function on_mouse_move(event) { 
 	  if (mouse_down === true) { 
-		if(event.touches[0].clientX-50<=0){
-			document.querySelector('.connectedGlass.healObject').style.left = 0+'px';
-		} else if(event.touches[0].clientX-50>300) {
-			document.querySelector('.connectedGlass.healObject').style.left = 300+'px'; 
+		if(event.touches[0].clientX-60<=0){
+			document.querySelector('.active.healObject:not(.placed)').style.left = 0+'px';
+		} else if(event.touches[0].clientX-60>440) {
+			document.querySelector('.active.healObject:not(.placed)').style.left = 440+'px'; 
 		} else {
-			document.querySelector('.connectedGlass.healObject').style.left = event.touches[0].clientX-50+'px';
+			console.log(event.touches[0].clientX);
+			document.querySelector('.active.healObject:not(.placed)').style.left = event.touches[0].clientX-60+'px';
 		}
 		
-		if(event.touches[0].clientY-50<=0){
-			document.querySelector('.connectedGlass.healObject').style.top = 0+'px';
-		} else if(event.touches[0].clientY-50>300) {
-			document.querySelector('.connectedGlass.healObject').style.top = 300+'px'; 
+		if(event.touches[0].clientY-246<=0){
+			document.querySelector('.active.healObject:not(.placed)').style.top = 0+'px';
+		} else if(event.touches[0].clientY-246>440) {
+			document.querySelector('.active.healObject:not(.placed)').style.top = 440+'px'; 
 		} else {
-			document.querySelector('.connectedGlass.healObject').style.top = event.touches[0].clientY-50+'px';
+			console.log(event.touches[0].clientY);
+			document.querySelector('.active.healObject:not(.placed)').style.top = event.touches[0].clientY-246+'px';
 		}
 		
 		
-		if(event.touches[0].clientY-50>=0 && event.touches[0].clientY-50<300) {
-			document.querySelector('.connectedGlass.healObject').style.top = event.clientY-50+'px'; 
+		if(event.touches[0].clientY-246>=0 && event.touches[0].clientY-60<440) {
+			document.querySelector('.active.healObject:not(.placed)').style.top = event.clientY-246+'px'; 
 		}
 
 	  } 

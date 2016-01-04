@@ -96,10 +96,6 @@ body {
 	background-image: url(../img/background/scene1FondChambre.png);
 }
 
-/*#page2 {
-	background-image: url(../img/background/scene2ZoomChambre.png);
-}*/
-
 #page2 {
 	background-image: url(../img/background/scene3ExterieurNopex.png);
 }
@@ -111,10 +107,6 @@ body {
 #page4 {
 	background-image: url(../img/background/scene5FondScanner.png);
 }
-
-/*#page6 {
-	background-image: url(../img/background/scene6Choix.png);
-}*/
 
 #page5 {
 	background-image: url(../img/background/scene7JeuFond.png);
@@ -134,8 +126,8 @@ body {
     width: 400px;
     height: 120px;
     position: absolute;
-    top: 7%;
-    left: 6%;
+    top: 54px;
+    left: 60px;
     padding: 20px;
     padding-bottom: 40px;
     font-family: twCenMT;
@@ -175,13 +167,35 @@ body {
 	width: 440px;
     height: 440px;
     position: absolute;
-    top: 32%;
-    left: 6%;
+    top: 246px;
+    left: 60px;
     border: red 1px solid;
+}
+
+#validationButton {
+	display: none;
+	padding: 2px 20px;
+	position: absolute;
+	top: 700px;
+    left: 210px;
+	background-color: rgba(255,255,255,0.7);
+	font-family: twCenMT;
+    color: black;
 }
 
 .healObject {
 	position: absolute;
+	display: none;
+}
+
+.choiceObject1 {
+	top: 65px;
+	left: 117px;
+}
+
+.choiceObject2 {
+	top: 65px;
+	left: 260px;
 }
 
 .connectedGlass {
@@ -192,46 +206,29 @@ body {
 	height: 23px;
 }
 
-
-
-
-
-
-
-
-
-
-.wholePage {
-	height: 100%;
-	background-color: grey;
+.flowerHat {
+	height: 104px;
 }
 
-.next-button {
-	width: 200px;
-	height:200px;
-	margin: 0 auto;
-	background-color: blue;
+.saladHair {
+	height: 104px;
 }
 
-.circle {
-    overflow: hidden;
-	margin: 0 auto;
-}
+.elevatedBrain {
 
-.imgInCircle {
-	background: url(../img/circleImg.jpg) no-repeat 0px 0px;
-	background-size: cover;
-	height:100%;
-	width: 100%;
 }
+.outgrowthLips {
 
-.imgInCircleClicked {
-	-webkit-transition: all 2s; /* Safari */
-    transition: all 2s;
-	background-position: 143px -1px;
-	transform: scale(6);
 }
+.outgrowthLips2
+.outgrowthNose
+.outgrowthEars
+.outgrowthEars2
+.cutaneousEruption
+.pinkCheekbone
+.greenPea
+.3DLung
+.clownLaught
 
-#welcomeMessage {
-	
-}
+
+

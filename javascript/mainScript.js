@@ -1,25 +1,5 @@
 $(document).ready(function() {
 
-	/*var bodyHeight = $("body").height();
-	var bodyWidth = $("body").width();
-
-	if (bodyHeight < bodyWidth) {
-		$(".circle").width(bodyHeight);
-		$(".circle").height(bodyHeight);
-		$(".circle").css("border-radius", bodyHeight);
-	} else {
-		$(".circle").width(bodyWidth);
-		$(".circle").height(bodyWidth);
-		$(".circle").css("border-radius", bodyWidth);
-	}*/
-
-
-	$(".imgInCircle").click(function() {
-		$(".imgInCircle").addClass("imgInCircleClicked");
-	});
-
-	//$(".page").click(nextPage);
-
 	$('.nextTextButton').click(nextText);
 	$('#firstBubbleChoice1').click(nextText);
 	$('#firstBubbleChoice2').click(nextPage);
@@ -28,6 +8,8 @@ $(document).ready(function() {
 	$('#thirdBubbleChoice1').click(nextText);
 	$('#thirdBubbleChoice2').click(nextPage);
 
+	$('#validationButton').click(validateObjectPosition);
+
 
 	function nextPage() {
 		var pageId = parseInt($(".page.active").attr('id').slice(-1));
@@ -35,23 +17,14 @@ $(document).ready(function() {
 
 		$("#page" + pageId).removeClass("active");
 		$("#page" + nextPageId).addClass("active");
-
-
 		$("#page" + pageId).fadeToggle(1000, function(){
 			$("#page" + nextPageId).fadeToggle(1500);
 			$('.nextTextButton').fadeIn("slow");
 		});
-		// $("#page" + pageId).animate({opacity:0},600,function(){
-		// 			$(this).css({display: 'none'});
-		// 			$("#page" + nextPageId).css({
-		// 		        opacity: 0,
-		// 		        display: 'block'     
-		// 		    }).animate({opacity:1},600);
-		// 		});
-	}
+	};
 
 	function nextText() {
-		var divText = $(this).siblings('.bubbleText');
+		var divText = $('.bubbleText:visible');
 		var idText = divText.attr('id').substring(0, divText.attr('id').length - 1);
 		var actualText = divText.attr('id').slice(-1);
 		actualText++;
@@ -141,12 +114,17 @@ $(document).ready(function() {
 
 			switch(actualText) {
 			    case 2:
-			    	$('#fifthBubbleChoice1').css({
+			    	$('.connectedGlass').css({
 				        opacity: 0,
 				        display: 'inline-block'     
 				    }).animate({opacity:1},600);
 
-					$('#fifthBubbleChoice2').css({
+					$('.bionicEye').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+
+				    $('#validationButton').css({
 				        opacity: 0,
 				        display: 'inline-block'     
 				    }).animate({opacity:1},600);
@@ -154,11 +132,7 @@ $(document).ready(function() {
 			        break;
 
 			    case 3:
-			    	$('#fifthBubbleChoice1').animate({opacity:0},600,function(){
-			        	$(this).css({display: 'none'});
-			        });
-
-					$('#fifthBubbleChoice2').animate({opacity:0},600,function(){
+			        $('#validationButton').animate({opacity:0},600,function(){
 			        	$(this).css({display: 'none'});
 			        });
 				    $('.nextTextButton').fadeIn("slow");
@@ -169,8 +143,24 @@ $(document).ready(function() {
 			}
 		}
 
-	}
+	};
 
+	function validateObjectPosition () {
+		var elementToConserve = null;
+		
+		$('.healObject:not(.placed):visible').each(function(){
+			if($(this).offset().top > 354) {
+				elementToConserve = $(this);
+			}
+		});
+		if(elementToConserve) {
+			elementToConserve.addClass('placed');
+			$('.healObject:not(.placed):visible').animate({opacity:0},600,function(){
+	        	$(this).css({display: 'none'});
+	        });	
+	     	nextText();  
+		}
+	};
 
 	var allTextExperience = {
 		firstBubble1: "\"C’est l’heure de se lever,<br> pour prendre ton petit\
@@ -260,6 +250,7 @@ $(document).ready(function() {
 					   gps,  prise de photo, appel & communication,  vision \
 					   de danger…etc) ou l’apposition de lunettes \
 					   visiaugmentées à reconnaissance vocale. Que \
-					   voulez-vous faire ?"
+					   voulez-vous faire ?",
+		fifthBubble3: "COUCOUCOUCOU"
 	};
 });
