@@ -23,6 +23,12 @@ $(document).ready(function() {
 			$("#page" + nextPageId).fadeToggle(1500);
 			$('.nextTextButton').fadeIn("slow");
 		});
+
+		if(nextPageId == 2) {
+			$('#firstSong').animate({volume: 0}, 1000, function(){
+				$('#secondSong').trigger("play");
+			});
+		}
 	};
 
 	function nextText() {
@@ -268,4 +274,7 @@ $(document).ready(function() {
 					   voulez-vous faire ?",
 		fifthBubble3: "COUCOUCOUCOU"
 	};
+
+	$('#firstSong').prop("volume", 0.20);
+	$('#secondSong').prop("volume", 0.20);
 });
