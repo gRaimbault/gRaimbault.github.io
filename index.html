@@ -1,107 +1,73 @@
 <!DOCTYPE html> 
 <html> 
 	<head> 
-		<meta charset="utf-8"/>
-		<meta name="viewport" content=" height=device-height, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta charset="utf-8"  /> 
+		<title>Déplacer un élément à la souris</title>
 
-		<title>NOPEX</title>
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
-		<script text="text/javascript" src="javascript/framework/jquery-2.1.4.min.js"></script>
-		<script text="text/javascript" src="javascript/mainScript.js"></script>
+		<style>
+			#square 
+			{ 
+				position:absolute; 
+				height:100px; 
+				width:100px; 
+				background-color:red; 
+			} 
+			
+			#coucou {
+				position:relative;
+				margin-top:50px;
+				margin-left:50px;
+				width: 400px;
+				height: 400px;
+				background-color:green;
+			}
+		</style> 
 	</head> 
-
 	<body> 
-		<div id="page1" class="page active">
-			<!-- <img src="img/background/scene1FondChambre.png" height="100%" class="backgroundImg"/> -->
-			<div class="bubbleUpLeft">
-				<div id="firstBubble1" class="bubbleText">
-					"C'est l'heure de se lever,
-					<br>
-					pour prendre ton petit déjeuner, 
-					<br>
-					tes mails sont à checker" 
-					<br>
-					<br>
-					Ah où est cet holo réveil de malheur, il va me déglutir  toutes les réclames matinales si je l'arrête pas.
-				</div>
-				<div class="nextTextButton"></div>
-				<div id="firstBubbleChoice1" class="bubbleChoice">
-					NOPEX ? Qu'est-ce que c'est exactement ?
-				</div>
-				<div id="firstBubbleChoice2" class="bubbleChoice">
-					Super ! J'ai gagné !hahaha! J'y court, j'y vol !
-				</div>
-				<div id="firstBubbleChoice3" class="bubbleChoice">
-					OK, allons voir.
-				</div>
-			</div>
-		</div>
-
-		<div id="page2" class="page" style="display:none;">
-			<div class="bubbleUpLeft">
-				<div id="secondBubble1" class="bubbleText">
-					Whaouhh ça claque, ce batiment est immense, incroyable, effrayant. Il me trouble, j'ai l'impression de vivre quelque chose d'irréel : Est-ce vraiment pour moi tout ça ? 
-					<br>
-					En tout cas j'espère que ma douleur au dos s'envolera !!
-				</div>
-				<div class="nextTextButton"></div>
-			</div>
-		</div>
-
-		<div id="page3" class="page" style="display:none;">
-			<div class="bubbleUpLeft">
-				<div id="thirdBubble1" class="bubbleText">
-					« Bonjour,
-					<br>
-					<br>
-					Haaa c'est vous qui avez remporté le concours ! Toutes nos félicitations !!
-					<br>
-					<br>
-					Voici comment votre journée va se dérouler : Dans un premier temps nous vous proposons de passer par un scanner pour déceler vos défaillances.
-				</div>
-				<div class="nextTextButton"></div>
-				<div id="thirdBubbleChoice1" class="bubbleChoice">
-					Dites m'en un peu plus? Quels sont les risques ? Les taux de réussites ? 
-				</div>
-				<div id="thirdBubbleChoice2" class="bubbleChoice">
-					C'est parti!
-				</div>
-			</div>
-		</div>
-
-		<div id="page4" class="page" style="display:none;">
-			<div class="bubbleUpLeft">
-				<div id="fourthBubble1" class="bubbleText">
-					Soyez raisonnable, mettez votre tête au milieu des repères pour un meilleur résultat.
-				</div>
-				<div class="nextTextButton"></div>
-			</div>
-		</div>
-
-		<div id="page5" class="page" style="display:none;">
-			<div class="bubbleUpLeft">
-				<div id="fifthBubble1" class="bubbleText">
-					Nous avons observé au scan que vous ne possédiez pas la vision augmentée. M..M..Mais, c’est IMPENSAAABLE !! À l’heure actuelle c’est un outil qui est devenu AB-SO-LU-MENT indispensable à l’humain. Nous vous proposons donc deux manières de solutionner ce problème : 
-				</div>
-				<div class="nextTextButton"></div>
-			</div>
-		</div>
-
-		<div id="page6" class="page" style="display:none;">
-
-		</div>
-
-		<div id="page7" class="page" style="display:none;">
-
-		</div>
-
-		<div id="page8" class="page" style="display:none;">
-
-		</div>
-		
-		<div id="page9" class="page" style="display:none;">
-
-		</div>
+		<div id="coucou">
+			<div id="square" onmousedown="on_mouse_down_square(event)"></div> 
+		</div>	
 	</body> 
 </html> 
+
+<script type="text/javascript"> 
+	var mouse_down = false; 
+
+	function on_mouse_down_square(event) { 
+	 mouse_down=true; 
+	} 
+
+	function on_mouse_up(event){ 
+	 mouse_down=false; 
+	} 
+
+	document.onmousemove = on_mouse_move; 
+
+	document.onmouseup = on_mouse_up; 
+
+	function on_mouse_move(event) { 
+	  if (mouse_down === true) { 
+		if(event.clientX-50<=0){
+			document.querySelector('#square').style.left = 0+'px';
+		} else if(event.clientX-50>300) {
+			document.querySelector('#square').style.left = 300+'px'; 
+		} else {
+			document.querySelector('#square').style.left = event.clientX-50+'px';
+		}
+		
+		if(event.clientY-50<=0){
+			document.querySelector('#square').style.top = 0+'px';
+		} else if(event.clientY-50>300) {
+			document.querySelector('#square').style.top = 300+'px'; 
+		} else {
+			document.querySelector('#square').style.top = event.clientY-50+'px';
+		}
+		
+		
+		if(event.clientY-50>=0 && event.clientY-50<300) {
+			document.querySelector('#square').style.top = event.clientY-50+'px'; 
+		}
+
+	  } 
+	} 
+</script>

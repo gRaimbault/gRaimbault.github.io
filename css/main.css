@@ -171,9 +171,26 @@ body {
 }
 
 
+#dragDropZone {
+	width: 440px;
+    height: 440px;
+    position: absolute;
+    top: 32%;
+    left: 6%;
+    border: red 1px solid;
+}
 
+.healObject {
+	position: absolute;
+}
 
+.connectedGlass {
+	height: 23px;
+}
 
+.bionicEye {
+	height: 23px;
+}
 
 
 
