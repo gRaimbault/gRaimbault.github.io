@@ -11,6 +11,8 @@ $(document).ready(function() {
 	$('#validationButton').click(validateObjectPosition);
 
 
+	$('#page6').click(nextPage);
+
 	function nextPage() {
 		var pageId = parseInt($(".page.active").attr('id').slice(-1));
 		var nextPageId = pageId + 1;
@@ -158,7 +160,20 @@ $(document).ready(function() {
 			$('.healObject:not(.placed):visible').animate({opacity:0},600,function(){
 	        	$(this).css({display: 'none'});
 	        });	
+	        changeAnswerAndEnv(elementToConserve);
 	     	nextText();  
+		}
+	};
+
+	function changeAnswerAndEnv(elementConserved) {
+		if(elementConserved.hasClass('connectedGlass')) {
+			allTextExperience["fifthBubble3"] = "Très bon choix ! Malheureusement, vos yeux on tendance à fatiguer et se mettent à tourbillonner…";
+			$(".whirlpool").fadeToggle(600);
+		}
+
+		if(elementConserved.hasClass('bionicEye')) {
+			allTextExperience["fifthBubble3"] = "Cet œil vous va à ravir ! Petite précision : nous avons tenu à vous mettre notre dernière mise à jour qui permet de visionner en direct les dernières nouveautés en terme de produits. …Non… nous n’appelons pas cela de la pollution visuelle !!";
+			$(".advertisement").fadeToggle(600);
 		}
 	};
 

@@ -109,11 +109,11 @@ body {
 }
 
 #page5 {
-	background-image: url(../img/background/scene7JeuFond.png);
+	background-image: url(../img/background/fondJeu2.jpg);
 }
 
 #page6 {
-	background-image: url(../img/background/scene8FicheRecapitulativeFond.png);
+	background-image: url(../img/background/mockup6ficherecapitulative.jpg);
 }
 
 #page7 {
@@ -169,7 +169,20 @@ body {
     position: absolute;
     top: 246px;
     left: 60px;
-    border: red 1px solid;
+}
+
+#transformEnv {
+	border: 1px solid red;
+    width: 453px;
+    height: 450px;
+    left: 511px;
+    position: absolute;
+    top: 199px;
+}
+
+.changeEnvCircle {
+	height: 100%;
+	display: none;
 }
 
 #validationButton {
