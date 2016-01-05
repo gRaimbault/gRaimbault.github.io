@@ -8,14 +8,14 @@ $(document).ready(function() {
 
 	var vol = 0.20;
 	function fadeout(){ 
-		setInterval(
+		var intervalToBeCleared = setInterval(
 			function() {
 				if (vol > 0) {
 				  vol -= 0.05;
 				  firstSong.volume = vol;
 				}
 				else {
-				  clearInterval(fadeout);
+				  clearInterval(intervalToBeCleared);
 				}
 			}, 
 		200)
