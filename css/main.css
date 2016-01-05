@@ -172,7 +172,6 @@ body {
 }
 
 #transformEnv {
-	border: 1px solid red;
     width: 453px;
     height: 450px;
     left: 511px;
@@ -182,6 +181,7 @@ body {
 
 .changeEnvCircle {
 	height: 100%;
+	position: absolute;
 	display: none;
 }
 
@@ -209,6 +209,16 @@ body {
 .choiceObject2 {
 	top: 65px;
 	left: 260px;
+}
+
+.choiceObject3 {
+	top: 8px;
+	left: 75px;
+}
+
+.choiceObject4 {
+	top: 65px;
+	left: 227px;
 }
 
 .connectedGlass {
@@ -240,7 +250,9 @@ body {
 .cutaneousEruption
 .pinkCheekbone
 .greenPea
-.3DLung
+.3DLung {
+	height:104px;
+}
 .clownLaught
 
 
