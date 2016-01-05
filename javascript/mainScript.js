@@ -6,21 +6,6 @@ $(document).ready(function() {
 	firstSong.volume=0.2;
 	secondSong.volume=0.2;
 
-	var vol = 0.20;
-	function fadeout(){ 
-		var intervalToBeCleared = setInterval(
-			function() {
-				if (vol > 0) {
-				  vol -= 0.05;
-				  firstSong.volume = vol;
-				}
-				else {
-				  clearInterval(intervalToBeCleared);
-				}
-			}, 
-		200)
-	};
-
 	$('.nextTextButton').click(nextText);
 	$('#firstBubbleChoice1').click(nextText);
 	$('#firstBubbleChoice2').click(nextPage);
@@ -46,13 +31,8 @@ $(document).ready(function() {
 		});
 
 		if(nextPageId == 2) {
-			fadeout();
+			firstSong.pause();
 			secondSong.play();
-
-			/*$('#firstSong').animate({volume: 0}, 1000, function(){
-				firstSong.pause();
-				secondSong.play();
-			});*/
 		}
 	};
 
