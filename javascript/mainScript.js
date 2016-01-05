@@ -147,7 +147,7 @@ $(document).ready(function() {
 			        break;
 
 			    case 5:
-			        $('.3DLung').css({
+			        $('.troisDLung').css({
 				        opacity: 0,
 				        display: 'inline-block'     
 				    }).animate({opacity:1},600);
@@ -199,7 +199,10 @@ $(document).ready(function() {
 	function changeAnswerAndEnv(elementConserved) {
 		if(elementConserved.hasClass('connectedGlass')) {
 			allTextExperience["fifthBubble3"] = "Très bon choix ! Malheureusement, vos yeux on tendance à fatiguer et se mettent à tourbillonner…";
-			$(".whirlpool").fadeToggle(600);
+			$('.whirlpool').css({
+		        opacity: 0,
+		        display: 'inline-block'     
+		    }).animate({opacity:0.6},600);
 		}
 
 		if(elementConserved.hasClass('bionicEye')) {
@@ -213,9 +216,12 @@ $(document).ready(function() {
 			$(".squall").fadeToggle(600);
 		}
 
-		if(elementConserved.hasClass('3DLung')) {
+		if(elementConserved.hasClass('troisDLung')) {
 			allTextExperience["fifthBubble6"] = "C’est un très bon choix, en purifiant l’air ambiant vous contribuerez à purifier l’air de tout le monde. De plus, ce chapeau vous va à ravir!";
-			$(".fire").fadeToggle(600);
+			$('.fire').css({
+		        opacity: 0,
+		        display: 'inline-block'     
+		    }).animate({opacity:0.6},600);
 		}
 	};
 
@@ -227,7 +233,7 @@ $(document).ready(function() {
 
 		firstBubble2: "Mes yeux s’ouvrent péniblement, j’entends le ballet \
 					  incéssant des premières navettes emmenant déjà les premières \
-					  personnes à leur travail. Hum… je sens mon mal de dos \
+					  personnes à leur travail. <br><br>Hum… je sens mon mal de dos \
 					  chronique, la journée va être longue. Si j’avais reçu mon \
 					  bitcoin du mois, j’aurais pu aller chez le médotechnologue.",
 
@@ -235,7 +241,7 @@ $(document).ready(function() {
 					  technologie nous ouvrent de nouvelles possibilités autant au \
 					  niveau matériel qu'au niveau santé : manipulations \
 					  génétiques, clonage, bio et nanotechnologies, membres \
-					  mécaniques... Des avancées technologiques qui permettent un \
+					  mécaniques... <br><br>Des avancées technologiques qui permettent un \
 					  certain confort de vie...quand on en a les moyens. Hum, si \
 					  j’avais plus de bitcoins…",
 
@@ -246,21 +252,21 @@ $(document).ready(function() {
 					  espèces disparaissent...",
 
 		firstBubble5: "...Avant de me lever, je commande un petit dèj sur mon \
-					  « delismart » et lance la lecture des messages importants...\
-					  <br><br>Tiens,le concours auquel j'ai participé la semaine \
+					  «&nbsp;delismart&nbsp;» et lance la lecture des messages importants...\
+					  <br><br>Tiens, le concours auquel j'ai participé la semaine \
 					  dernière...",
 
 		firstBubble6: "\"Félicitations, vous êtes l'heureux gagnant du concours \
 					  NOPEX ! Grâce à son nouveau scanner ultra-puissant, Nopex \
 					  vous offre l'opportunité de détecter vos défaillances santé. \
-					  Nos experts se mettent à votre service pour vous fournir les \
+					  <br>Nos experts se mettent à votre service pour vous fournir les \
 					  meilleurs soins et vous mettre à jour.<br><br>Pour profiter \
 					  de votre cadeau : Veuillez vous présenter au 121 rue \
 					  mêmepaspeur, NOPEXLAND \"",
 		firstBubble7: "Créé en 2001 par Lou Nowel, prix Nobel de physique, NOPEX \
-					  (centre exponentielle) est le premier centre de recherche \
-					  technologique medicale et scientifique en île-de-France. \
-					  Installé au cœur d'un environnement scientifique, industriel \
+					  (centre exponentielle) est le premier centre <br>de recherche \
+					  technologique medicale et scientifique <br>en Ile-de-France. \
+					  <br>Installé au cœur d'un environnement scientifique, industriel \
 					  et universitaire très riche, NOPEX consacre l'essentiel de \
 					  ses recherches au développement des nouvelles technologies, \
 					  dans les domaines de l'énergie, de la santé et de \
@@ -289,7 +295,7 @@ $(document).ready(function() {
 		thirdBubble3: "\"Grâce à NOPEX vous pouvez déceler et soigner n'importe \
 					  quel défaut de santé  ou défaut émotionnel ! Avec 100% de \
 					  réussite NOPEX se place comme le leader mondial des \
-					  technologies pour la santé et le bien être ! Vous ne \
+					  technologies pour la santé et le bien être ! <br>Vous ne \
 					  risquez absolument rien !! Vos maux qui vous rongent \
 					  seront apaisés, et si vous n'êtes pas satisfait (ce qui \
 					  n'est encore jamais arrivé) nous vous proposerons de \
@@ -306,10 +312,10 @@ $(document).ready(function() {
 					   voulez en temps réel (consulter internet, direction \
 					   gps,  prise de photo, appel & communication,  vision \
 					   de danger…etc) ou l’apposition de lunettes \
-					   visiaugmentées à reconnaissance vocale. Que \
+					   visiaugmentées à reconnaissance vocale. <br><br>Que \
 					   voulez-vous faire ?",
-		fifthBubble4: "D’ici 10 ans, vous allez développer une pathologie amazonienne, une vaste végétation va prospérer dans l’intégralité de vos poumons. Cette maladie découle du nouveau climat tropical qui envahira nos villes. Nous pouvons réaliser une impression 3D d’un de vos poumons et vous l’implanter afin de désengorger les poumons existants de cette verdure chatoyante. Des aérosols seront disposés dans ce futur ventricule pour assainir votre air. ",
-		fifthBubble5: "Sinon, une autre alternative est possible, l’utilisation notre Calottofleur,un formidable couvre chef qui purifiera l’air présent autour de vous en permanence. Les fleurs bioniques de ce chapeau capte et filtre l’air pour vous le restituer  sous une qualité optimale."
+		fifthBubble4: "D’ici 10 ans, vous allez développer une pathologie amazonienne, une vaste végétation va prospérer dans l’intégralité de vos poumons. Cette maladie découle du nouveau climat tropical qui envahira nos villes.<br> Nous pouvons réaliser une impression 3D d’un de vos poumons et vous l’implanter afin de désengorger les poumons existants de cette verdure chatoyante. Des aérosols seront disposés dans ce futur ventricule pour assainir votre air. ",
+		fifthBubble5: "Sinon, une autre alternative est possible, l’utilisation notre Calottofleur,un formidable couvre chef qui purifiera l’air présent autour de vous en permanence. <br>Les fleurs bioniques de ce chapeau capte et filtre l’air pour vous le restituer  sous une qualité optimale."
 	};
 
 	$('#firstSong').prop("volume", 0.20);

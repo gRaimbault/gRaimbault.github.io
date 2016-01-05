@@ -117,7 +117,7 @@ body {
 }
 
 #page7 {
-	background-image: url(../img/background/scene9ReflexionFond.png);
+	background-image: url(../img/background/lastImageMockupp.jpg);
 }
 
 
@@ -217,7 +217,7 @@ body {
 }
 
 .choiceObject4 {
-	top: 65px;
+	top: 8px;
 	left: 227px;
 }
 
@@ -237,23 +237,49 @@ body {
 	height: 104px;
 }
 
+.troisDLung {
+	height:104px;
+}
+
 .elevatedBrain {
 
 }
+
 .outgrowthLips {
 
 }
-.outgrowthLips2
-.outgrowthNose
-.outgrowthEars
-.outgrowthEars2
-.cutaneousEruption
-.pinkCheekbone
-.greenPea
-.3DLung {
-	height:104px;
+
+.outgrowthLips2{
+
 }
-.clownLaught
+
+.outgrowthNose{
+
+}
+
+.outgrowthEars{
+
+}
+
+.outgrowthEars2{
+
+}
+
+.cutaneousEruption{
+
+}
+
+.pinkCheekbone{
+
+}
+
+.greenPea{
+
+}
+
+.clownLaught{
+
+}
 
 
 
