@@ -31,12 +31,13 @@ $(document).ready(function() {
 		});
 
 		if(nextPageId == 2) {
-			firstSong.pause();
-			secondSong.play();
+			
+			
 
-			/*$('#firstSong').animate({volume: 0}, 1000, function(){
-				$('#secondSong').trigger("play");
-			});*/
+			$('#firstSong').animate({volume: 0}, 1000, function(){
+				firstSong.pause();
+				secondSong.play();
+			});
 		}
 	};
 
