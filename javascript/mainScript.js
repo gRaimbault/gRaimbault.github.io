@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+	var firstSong = document.getElementById("firstSong");
+	var secondSong = document.getElementById("secondSong");
+
+	firstSong.volume=0.2;
+	secondSong.volume=0.2;
+
 	$('.nextTextButton').click(nextText);
 	$('#firstBubbleChoice1').click(nextText);
 	$('#firstBubbleChoice2').click(nextPage);
@@ -25,9 +31,12 @@ $(document).ready(function() {
 		});
 
 		if(nextPageId == 2) {
-			$('#firstSong').animate({volume: 0}, 1000, function(){
+			firstSong.pause();
+			secondSong.play();
+
+			/*$('#firstSong').animate({volume: 0}, 1000, function(){
 				$('#secondSong').trigger("play");
-			});
+			});*/
 		}
 	};
 
@@ -49,6 +58,9 @@ $(document).ready(function() {
 		if(idText == "firstBubble") {
 
 			switch(actualText) {
+				case 2:
+					firstSong.play();
+					break;
 			    case 6:
 			        $('#firstBubbleChoice1').css({
 				        opacity: 0,
@@ -317,7 +329,4 @@ $(document).ready(function() {
 		fifthBubble4: "D’ici 10 ans, vous allez développer une pathologie amazonienne, une vaste végétation va prospérer dans l’intégralité de vos poumons. Cette maladie découle du nouveau climat tropical qui envahira nos villes.<br> Nous pouvons réaliser une impression 3D d’un de vos poumons et vous l’implanter afin de désengorger les poumons existants de cette verdure chatoyante. Des aérosols seront disposés dans ce futur ventricule pour assainir votre air. ",
 		fifthBubble5: "Sinon, une autre alternative est possible, l’utilisation notre Calottofleur,un formidable couvre chef qui purifiera l’air présent autour de vous en permanence. <br>Les fleurs bioniques de ce chapeau capte et filtre l’air pour vous le restituer  sous une qualité optimale."
 	};
-
-	$('#firstSong').prop("volume", 0.20);
-	$('#secondSong').prop("volume", 0.20);
 });
