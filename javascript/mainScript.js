@@ -251,16 +251,8 @@ $(document).ready(function() {
 		}
 
 		if(elementConserved.hasClass('troisDLung')) {
-<<<<<<< HEAD
 			allTextExperience["fifthBubble6"] = "Félicitations, votre troisième poumon fonctionne parfaitement! Votre teint a changé, vous semblez plus...coloré!";
 			$(".fire").fadeToggle(600);
-=======
-			allTextExperience["fifthBubble6"] = "C’est un très bon choix, en purifiant l’air ambiant vous contribuerez à purifier l’air de tout le monde. De plus, ce chapeau vous va à ravir!";
-			$('.fire').css({
-		        opacity: 0,
-		        display: 'inline-block'     
-		    }).animate({opacity:0.6},600);
->>>>>>> origin/master
 		}
 
 		if(elementConserved.hasClass('prescription')) {
@@ -362,7 +354,6 @@ $(document).ready(function() {
 					   de danger…etc) ou l’apposition de lunettes \
 					   visiaugmentées à reconnaissance vocale. <br><br>Que \
 					   voulez-vous faire ?",
-<<<<<<< HEAD
 		fifthBubble4: "D’ici 10 ans, vous allez développer une pathologie \
 					   amazonienne, une vaste végétation va prospérer dans \
 					   l’intégralité de vos poumons. Cette maladie découle \
@@ -398,9 +389,5 @@ $(document).ready(function() {
 					   conseille pas cette solution, même si elle a soigné de \
 					   nombreux patients, elle est assez longue à mettre en \
 					   place, vous ne verrez pas les effets tout de suite."
-=======
-		fifthBubble4: "D’ici 10 ans, vous allez développer une pathologie amazonienne, une vaste végétation va prospérer dans l’intégralité de vos poumons. Cette maladie découle du nouveau climat tropical qui envahira nos villes.<br> Nous pouvons réaliser une impression 3D d’un de vos poumons et vous l’implanter afin de désengorger les poumons existants de cette verdure chatoyante. Des aérosols seront disposés dans ce futur ventricule pour assainir votre air. ",
-		fifthBubble5: "Sinon, une autre alternative est possible, l’utilisation notre Calottofleur,un formidable couvre chef qui purifiera l’air présent autour de vous en permanence. <br>Les fleurs bioniques de ce chapeau capte et filtre l’air pour vous le restituer  sous une qualité optimale."
->>>>>>> origin/master
 	};
 });
