@@ -147,7 +147,7 @@ $(document).ready(function() {
 			        break;
 
 			    case 5:
-			        $('.3DLung').css({
+			        $('.troisDLung').css({
 				        opacity: 0,
 				        display: 'inline-block'     
 				    }).animate({opacity:1},600);
@@ -171,8 +171,34 @@ $(document).ready(function() {
 				    $('.nextTextButton').fadeIn("slow");
 			        break;
 
+				case 9:
+			        $('.prescription').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+
+					$('.scalpel').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+
+				    $('#validationButton').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+					$('.nextTextButton').fadeOut("slow");
+			        break;
+
+			    case 10:
+			        $('#validationButton').animate({opacity:0},600,function(){
+			        	$(this).css({display: 'none'});
+			        });
+				    $('.nextTextButton').fadeIn("slow");
+			        break;
+
 			    default:
 			        break;
+
 			}
 		}
 
@@ -209,13 +235,22 @@ $(document).ready(function() {
 
 
 		if(elementConserved.hasClass('flowerHat')) {
-			allTextExperience["fifthBubble6"] = "Félicitations, votre troisième poumon fonctionne parfaitement! Votre teint a changé, vous semblez plus...coloré!";
+			allTextExperience["fifthBubble6"] = "C’est un très bon choix, en purifiant l’air ambiant vous contribuerez à purifier l’air de tout le monde. De plus, ce chapeau vous va à ravir!";
 			$(".squall").fadeToggle(600);
 		}
 
-		if(elementConserved.hasClass('3DLung')) {
-			allTextExperience["fifthBubble6"] = "C’est un très bon choix, en purifiant l’air ambiant vous contribuerez à purifier l’air de tout le monde. De plus, ce chapeau vous va à ravir!";
+		if(elementConserved.hasClass('troisDLung')) {
+			allTextExperience["fifthBubble6"] = "Félicitations, votre troisième poumon fonctionne parfaitement! Votre teint a changé, vous semblez plus...coloré!";
 			$(".fire").fadeToggle(600);
+		}
+
+		if(elementConserved.hasClass('prescription')) {
+			allTextExperience["fifthBubble10"] = "Vos prochaines séances de yoga ont été programmées. Je trouve vraiment cette solution trop longue, n’espérez pas un résultat immédiat.";
+		}
+
+		if(elementConserved.hasClass('scalpel')) {
+			allTextExperience["fifthBubble10"] = "Vous avez fait le meilleur choix! Vous allez voir la vie en rose, déjà votre sourire ne vous quitte plus.";
+			$(".pinkLife").fadeToggle(600);
 		}
 	};
 
@@ -308,8 +343,41 @@ $(document).ready(function() {
 					   de danger…etc) ou l’apposition de lunettes \
 					   visiaugmentées à reconnaissance vocale. Que \
 					   voulez-vous faire ?",
-		fifthBubble4: "D’ici 10 ans, vous allez développer une pathologie amazonienne, une vaste végétation va prospérer dans l’intégralité de vos poumons. Cette maladie découle du nouveau climat tropical qui envahira nos villes. Nous pouvons réaliser une impression 3D d’un de vos poumons et vous l’implanter afin de désengorger les poumons existants de cette verdure chatoyante. Des aérosols seront disposés dans ce futur ventricule pour assainir votre air. ",
-		fifthBubble5: "Sinon, une autre alternative est possible, l’utilisation notre Calottofleur,un formidable couvre chef qui purifiera l’air présent autour de vous en permanence. Les fleurs bioniques de ce chapeau capte et filtre l’air pour vous le restituer  sous une qualité optimale."
+		fifthBubble4: "D’ici 10 ans, vous allez développer une pathologie \
+					   amazonienne, une vaste végétation va prospérer dans \
+					   l’intégralité de vos poumons. Cette maladie découle \
+					   du nouveau climat tropical qui envahira nos villes. \
+					   Nous pouvons réaliser une impression 3D d’un de vos \
+					   poumons et vous l’implanter afin de désengorger les \
+					   poumons existants de cette verdure chatoyante. Des \
+					   aérosols seront disposés dans ce futur ventricule \
+					   pour assainir votre air. ",
+		fifthBubble5: "Sinon, une autre alternative est possible, \
+					   l’utilisation notre Calottofleur,un formidable \
+					   couvre chef qui purifiera l’air présent autour de \
+					   vous en permanence. Les fleurs bioniques de ce chapeau\
+					    capte et filtre l’air pour vous le restituer  sous \
+					   une qualité optimale.",
+		fifthBubble7: "Nous avons analysé vos radiations cérébrales et il \
+					   semblerait que vous serait sujet à déprimoloïde. Il est \
+					   clair que vos risques d’entrer en grave déprimoloidation \
+					   sont élevés! Mais n’ayez crainte, nous avons des \
+					   solutions à vous proposer. <br><br>Nous pouvons insérer un \
+					   dispositif dans votre crâne qui stimulera électriquement \
+					   les zones du plaisir et du bonheur de votre cerveau quand \
+					   vous le désirerez.",
+		fifthBubble8: "Cette solution ne nécessite qu’une simple opération et \
+					   l’utilisation de votre smartphone pour déclencher les \
+					   signaux électriques à volonté. Vous pourrez ainsi vous \
+					   libérer facilement des coups de bluettes et autres \
+					   sentiments de tristesse.",
+		fifthBubble9: "La deuxième solution possible est une thérapie du rire. \
+					   Il vous faudra vous rendre à des séances de yoga du rire \
+					   et de sophrologie ludique régulièrement afin de voir des \
+					   effets positifs sur votre psychologie. Je ne vous \
+					   conseille pas cette solution, même si elle a soigné de \
+					   nombreux patients, elle est assez longue à mettre en \
+					   place, vous ne verrez pas les effets tout de suite."
 	};
 
 	$('#firstSong').prop("volume", 0.20);
