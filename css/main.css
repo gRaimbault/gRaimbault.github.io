@@ -117,7 +117,7 @@ body {
 }
 
 #page7 {
-	background-image: url(../img/background/scene9ReflexionFond.png);
+	background-image: url(../img/background/lastImageMockupp.jpg);
 }
 
 
@@ -217,7 +217,7 @@ body {
 }
 
 .choiceObject4 {
-	top: 65px;
+	top: 8px;
 	left: 227px;
 }
 
@@ -237,12 +237,18 @@ body {
 	height: 104px;
 }
 
+.troisDLung {
+	height:104px;
+}
+
 .elevatedBrain {
 
 }
+
 .outgrowthLips {
 
 }
+<<<<<<< HEAD
 .troisDLung {
 	height:104px;
 }
@@ -262,6 +268,37 @@ body {
 .pinkCheekbone
 .greenPea
 .clownLaught
+=======
 
+.outgrowthLips2{
 
+}
 
+.outgrowthNose{
+
+}
+
+.outgrowthEars{
+
+}
+>>>>>>> origin/master
+
+.outgrowthEars2{
+
+}
+
+.cutaneousEruption{
+
+}
+
+.pinkCheekbone{
+
+}
+
+.greenPea{
+
+}
+
+.clownLaught{
+
+}
