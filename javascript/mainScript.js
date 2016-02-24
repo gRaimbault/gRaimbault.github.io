@@ -18,6 +18,7 @@ $(document).ready(function() {
 
 
 	$('#page6').click(nextPage);
+	$('#page7').click(nextPage);
 
 	function nextPage() {
 		var pageId = parseInt($(".page.active").attr('id').slice(-1));
