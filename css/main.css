@@ -121,7 +121,7 @@ body {
 }
 
 #page8 {
-	background-image: url(../img/background/lastSceneEnv.png);
+	background-image: url(../img/background/scene9ReflexionFond.png);
 }
 
 .bubbleUpLeft {
@@ -174,12 +174,16 @@ body {
     left: 60px;
 }
 
-#transformEnv {
+#transformEnvSmall {
     width: 453px;
     height: 450px;
     left: 511px;
     position: absolute;
     top: 199px;
+}
+
+#transformEnv img{
+	left: 107px;
 }
 
 .changeEnvCircle {
@@ -260,7 +264,9 @@ body {
 }
 
 .pinkCheekbone{
-
+	height: 24px;
+	left: 162px;
+	top: 211px;
 }
 
 .greenPea{

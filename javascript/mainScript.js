@@ -186,7 +186,7 @@ $(document).ready(function() {
 				        display: 'inline-block'     
 				    }).animate({opacity:1},600);
 
-					$('.scalpel').css({
+					$('.scalpelEmotion').css({
 				        opacity: 0,
 				        display: 'inline-block'     
 				    }).animate({opacity:1},600);
@@ -233,8 +233,9 @@ $(document).ready(function() {
 
 	function changeAnswerAndEnv(elementConserved) {
 		if(elementConserved.hasClass('connectedGlass')) {
-			allTextExperience["fifthBubble3"] = "Très bon choix ! Malheureusement, vos yeux on tendance à fatiguer et se mettent à tourbillonner…";
-			$('.whirlpool').css({
+			allTextExperience["fifthBubble3"] = "Très bon choix ! Malheureusement, vos yeux on tendance à fatiguer et se mettent à tourbillonner…";			 	
+			$( "#transformEnv .whirlpool" ).clone().appendTo( "#transformEnvSmall" );
+			$('#transformEnvSmall .whirlpool').css({
 		        opacity: 0,
 		        display: 'inline-block'     
 		    }).animate({opacity:0.6},600);
@@ -242,17 +243,21 @@ $(document).ready(function() {
 
 		if(elementConserved.hasClass('bionicEye')) {
 			allTextExperience["fifthBubble3"] = "Cet œil vous va à ravir ! Petite précision : nous avons tenu à vous mettre notre dernière mise à jour qui permet de visionner en direct les dernières nouveautés en terme de produits. …Non… nous n’appelons pas cela de la pollution visuelle !!";
+			$( "#transformEnv .advertisement" ).clone().appendTo( "#transformEnvSmall" );
 			$(".advertisement").fadeToggle(600);
 		}
 
 
 		if(elementConserved.hasClass('flowerHat')) {
 			allTextExperience["fifthBubble6"] = "C’est un très bon choix, en purifiant l’air ambiant vous contribuerez à purifier l’air de tout le monde. De plus, ce chapeau vous va à ravir!";
+			$( "#transformEnv .squall" ).clone().appendTo( "#transformEnvSmall" );
 			$(".squall").fadeToggle(600);
+			$(".pinkCheekbone").fadeToggle(600);
 		}
 
 		if(elementConserved.hasClass('troisDLung')) {
 			allTextExperience["fifthBubble6"] = "Félicitations, votre troisième poumon fonctionne parfaitement! Votre teint a changé, vous semblez plus...coloré!";
+			$( "#transformEnv .fire" ).clone().appendTo( "#transformEnvSmall" );
 			$(".fire").fadeToggle(600);
 		}
 
@@ -260,9 +265,11 @@ $(document).ready(function() {
 			allTextExperience["fifthBubble10"] = "Vos prochaines séances de yoga ont été programmées. Je trouve vraiment cette solution trop longue, n’espérez pas un résultat immédiat.";
 		}
 
-		if(elementConserved.hasClass('scalpel')) {
+		if(elementConserved.hasClass('.scalpelEmotion')) {
 			allTextExperience["fifthBubble10"] = "Vous avez fait le meilleur choix! Vous allez voir la vie en rose, déjà votre sourire ne vous quitte plus.";
+			$( "#transformEnv .pinkLife" ).clone().appendTo( "#transformEnvSmall" );
 			$(".pinkLife").fadeToggle(600);
+			$(".scalpelEmotion").fadeToggle(600);
 		}
 	};
 
