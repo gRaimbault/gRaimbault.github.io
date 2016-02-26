@@ -39,8 +39,9 @@ $(document).ready(function() {
 
 	function nextText() {
 		var divText = $('.bubbleText:visible');
-		var idText = divText.attr('id').substring(0, divText.attr('id').length - 1);
-		var actualText = divText.attr('id').slice(-1);
+
+		var idText = divText.attr('id').substring(0, divText.attr('id').indexOf("Bubble") + 6);
+		var actualText = divText.attr('id').substring(divText.attr('id').indexOf("Bubble") + 6, divText.attr('id').length);
 		actualText++;
 		var newIdText = idText + actualText;
 
@@ -205,6 +206,56 @@ $(document).ready(function() {
 				    $('.nextTextButton').fadeIn("slow");
 			        break;
 
+			    case 11:
+			        $('.pills').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+
+					$('.scalpelHomoncul').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+
+				    $('#validationButton').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+					$('.nextTextButton').fadeOut("slow");
+			        break;
+
+			    case 12:
+			        $('#validationButton').animate({opacity:0},600,function(){
+			        	$(this).css({display: 'none'});
+			        });
+				    $('.nextTextButton').fadeIn("slow");
+			        break;
+
+			    case 13:
+			        $('.syringe').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+
+					$('.homeopathicPlants').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+
+				    $('#validationButton').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+					$('.nextTextButton').fadeOut("slow");
+			        break;
+
+			    case 14:
+			        $('#validationButton').animate({opacity:0},600,function(){
+			        	$(this).css({display: 'none'});
+			        });
+				    $('.nextTextButton').fadeIn("slow");
+			        break;
+
 			    default:
 			        break;
 
@@ -240,7 +291,6 @@ $(document).ready(function() {
 		        display: 'inline-block'     
 		    }).animate({opacity:0.6},600);
 		}
-
 		if(elementConserved.hasClass('bionicEye')) {
 			allTextExperience["fifthBubble3"] = "Cet œil vous va à ravir ! Petite précision : nous avons tenu à vous mettre notre dernière mise à jour qui permet de visionner en direct les dernières nouveautés en terme de produits. …Non… nous n’appelons pas cela de la pollution visuelle !!";
 			$( "#transformEnv .advertisement" ).clone().appendTo( "#transformEnvSmall" );
@@ -254,23 +304,54 @@ $(document).ready(function() {
 			$(".squall").fadeToggle(600);
 			$(".pinkCheekbone").fadeToggle(600);
 		}
-
 		if(elementConserved.hasClass('troisDLung')) {
 			allTextExperience["fifthBubble6"] = "Félicitations, votre troisième poumon fonctionne parfaitement! Votre teint a changé, vous semblez plus...coloré!";
 			$( "#transformEnv .fire" ).clone().appendTo( "#transformEnvSmall" );
 			$(".fire").fadeToggle(600);
 		}
 
+
 		if(elementConserved.hasClass('prescription')) {
 			allTextExperience["fifthBubble10"] = "Vos prochaines séances de yoga ont été programmées. Je trouve vraiment cette solution trop longue, n’espérez pas un résultat immédiat.";
 		}
-
-		if(elementConserved.hasClass('.scalpelEmotion')) {
+		if(elementConserved.hasClass('scalpelEmotion')) {
 			allTextExperience["fifthBubble10"] = "Vous avez fait le meilleur choix! Vous allez voir la vie en rose, déjà votre sourire ne vous quitte plus.";
 			$( "#transformEnv .pinkLife" ).clone().appendTo( "#transformEnvSmall" );
 			$(".pinkLife").fadeToggle(600);
 			$(".scalpelEmotion").fadeToggle(600);
 		}
+
+
+		if(elementConserved.hasClass('pills')) {
+			allTextExperience["fifthBubble12"] = "Lors de votre homonculusation, un de vos sens s’est emballé et une excroissance s’est formée, vous pouvez potentiellement ressentir quelque déséquilibre.<br><br>Veuillez nous excusez par avance de la gêne occasionnée, mais vous vivrez plus longtemps grâce à nous !";
+			$( "#transformEnv .algae" ).clone().appendTo( "#transformEnvSmall" );
+			$(".greenPea").fadeToggle(600);
+			$(".algae").fadeToggle(600);
+			
+		}
+		if(elementConserved.hasClass('scalpelHomoncul')) {
+			allTextExperience["fifthBubble12"] = "Vous serez radié de toutes activités sportives et les effets de cette plante peuvent être visibles. Mais c’est une beauté nouvelle appréciée en 2045.";
+			$( "#transformEnv .ouotgrowthTree" ).clone().appendTo( "#transformEnvSmall" );
+			$(".ouotgrowthTree").fadeToggle(600);
+			$(".outgrowthEars").fadeToggle(600);
+			$(".scalpelHomoncul").fadeToggle(600);
+		}
+
+
+		if(elementConserved.hasClass('syringe')) {
+			allTextExperience["fifthBubble14"] = "Je vous avertis sur les effets secondaires au cas où, le dosage nanotechnologique n’a pas été respecté lors de notre intervention. Vous allez peut être ressentir des irritations et constater des irruptions cutanées d’un orange vif.<br><br>Veuillez nous excusez par avance de la gêne occasionnée, mais vous vivrez plus longtemps grâce à nous !";
+			$( "#transformEnv .pollution" ).clone().appendTo( "#transformEnvSmall" );
+			$(".cutaneousEruption").fadeToggle(600);
+			$(".pollution").fadeToggle(600);
+			
+		}
+		if(elementConserved.hasClass('homeopathicPlants')) {
+			allTextExperience["fifthBubble14"] = "Vous allez certainement développer une dépendance aux plantes prescrites. Vos cheveux  auront tendance à saladiser. Cet effet secondaire se diffusera sur la totalité du visage avec l’apparition de petits poids vert mais comestible, vous serez auto mangeable. Heureux ?";
+			$( "#transformEnv .plantsTrees" ).clone().appendTo( "#transformEnvSmall" );
+			$(".plantsTrees").fadeToggle(600);
+			$(".saladHair").fadeToggle(600);
+		}
+
 	};
 
 	var allTextExperience = {
@@ -396,6 +477,21 @@ $(document).ready(function() {
 					   effets positifs sur votre psychologie. Je ne vous \
 					   conseille pas cette solution, même si elle a soigné de \
 					   nombreux patients, elle est assez longue à mettre en \
-					   place, vous ne verrez pas les effets tout de suite."
+					   place, vous ne verrez pas les effets tout de suite.",
+		fifthBubble11: "En 2045, nous allons vous proposer le job de vos rêve \
+						à certaines conditions, pour cela vous devrez développer \
+						certaines de vos capacités, afin d’être prêt(e) pour le \
+						jour J. nous pouvons vous homonculuser c’est à dire \
+						développer un de vos 5 sens ou de prendre à partir de \
+						maintenant quintrahydrogestrinone qui permettra de \
+						doper vos facultés dans son ensemble.",
+		fifthBubble13: "Nous avons détecté un développement éventuel d’une \
+						pancréatique aiguë stade 4 dû à votre soif incontestée \
+						de gojibule dans votre analyse génotype. C’est une \
+						maladie très grave qui vous emportera en 2 semaines. \
+						Nous vous proposons différents traitements préventifs ; \
+						soit nous vous injectons des nanotechnologies dans votre \
+						organisme qui modifieront vos cellules, soit une thérapie \
+						homéopathique.<br><br>Quel est votre choix ?"
 	};
 });

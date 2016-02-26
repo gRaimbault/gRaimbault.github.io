@@ -242,6 +242,8 @@ body {
 
 .saladHair {
 	height: 104px;
+	top: 124px;
+	left: 117px;
 }
 
 .troisDLung {
@@ -260,7 +262,9 @@ body {
 }
 
 .cutaneousEruption{
-
+	height: 150px;
+	top: 164px;
+	left: 158px;
 }
 
 .pinkCheekbone{
@@ -270,9 +274,30 @@ body {
 }
 
 .greenPea{
-
+	height: 260px;
+	left: 60px;
+	top: 138px;
 }
 
 .clownLaught{
 
+}
+
+.pills {
+	height: 107px;
+}
+
+
+.outgrowthEars {
+	height: 55px;
+	left: 125px;
+	top: 184px;
+}
+
+.syringe {
+	height: 107px;
+}
+
+.homeopathicPlants {
+	height: 107px;
 }
