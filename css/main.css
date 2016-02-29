@@ -94,19 +94,19 @@ body {
 }
 
 #page1 {
-	background-image: url(../img/background/scene1FondChambre.jpg);
+	background-image: url(../img/background/Scene1FondChambre.jpg);
 }
 
 #page2 {
-	background-image: url(../img/background/scene3ExterieurNopex.jpg);
+	background-image: url(../img/background/Scene3ExterieurNopex.jpg);
 }
 
 #page3 {
-	background-image: url(../img/background/scene4FondLaboratoire.jpg);
+	background-image: url(../img/background/Scene4FondLaboratoire.jpg);
 }
 
 #page4 {
-	background-image: url(../img/background/scene5FondScanner.png);
+	background-image: url(../img/background/Scene5FondScanner.png);
 }
 
 #page5 {
@@ -118,7 +118,7 @@ body {
 }
 
 #page7 {
-	background-image: url(../img/background/scene9ReflexionFond.jpg);
+	background-image: url(../img/background/Scene9ReflexionFond.jpg);
 }
 
 .bubbleUpLeft {
