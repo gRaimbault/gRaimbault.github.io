@@ -256,6 +256,32 @@ $(document).ready(function() {
 				    $('.nextTextButton').fadeIn("slow");
 			        break;
 
+			    case 16:
+			        $('.chip').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+
+					$('.scalpelKineuro').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+
+				    $('#validationButton').css({
+				        opacity: 0,
+				        display: 'inline-block'     
+				    }).animate({opacity:1},600);
+					$('.nextTextButton').fadeOut("slow");
+			        break;
+
+			    case 17:
+			        $('#validationButton').animate({opacity:0},600,function(){
+			        	$(this).css({display: 'none'});
+			        });
+				    $('.nextTextButton').fadeIn("slow");
+			        break;
+			        
+
 			    default:
 			        break;
 
@@ -350,6 +376,21 @@ $(document).ready(function() {
 			$( "#transformEnv .plantsTrees" ).clone().appendTo( "#transformEnvSmall" );
 			$(".plantsTrees").fadeToggle(600);
 			$(".saladHair").fadeToggle(600);
+		}
+
+
+		if(elementConserved.hasClass('chip')) {
+			allTextExperience["fifthBubble17"] = "Votre cerveau reçoit trop d’informations à la fois, vous n’êtes pas capable de le supporter ce qui crée un embrouillement des données.";
+			$( "#transformEnv .tangleWords" ).clone().appendTo( "#transformEnvSmall" );
+			$(".tangleWords").fadeToggle(600);
+			
+		}
+		if(elementConserved.hasClass('scalpelKineuro')) {
+			allTextExperience["fifthBubble17"] = "C’est apaisant n’est-ce pas ?! Les effets indésirables sont légerement embêtant… Vouuus aaavez unnn gonnnnflemmmeeent duuu cerveauuuuu…";
+			$( "#transformEnv .tangleWords" ).clone().appendTo( "#transformEnvSmall" );
+			$(".tangleWords").fadeToggle(600);
+			$(".elevatedBrain").fadeToggle(600);
+			$(".scalpelKineuro").fadeToggle(600);
 		}
 
 	};
@@ -492,6 +533,22 @@ $(document).ready(function() {
 						Nous vous proposons différents traitements préventifs ; \
 						soit nous vous injectons des nanotechnologies dans votre \
 						organisme qui modifieront vos cellules, soit une thérapie \
-						homéopathique.<br><br>Quel est votre choix ?"
+						homéopathique.<br><br>Quel est votre choix ?",
+		fifthBubble15: "Il semblerait que vous ayez 82% de chance d’être atteint \
+						de l’alzeihmer vers l’âge de 70 ans. Pour pallier cette \
+						défaillance avant qu’elle ne survienne, nous vous \
+						proposons notre puce neurochiffonière qui permettra \
+						d’avoir accès à toutes les données rangées et classées \
+						dans des tiroirs-synaptiques. <br><br>Vous pourrez aussi \
+						aller récupérer les sources manquante sur le réseau \
+						internet directement. ",
+		fifthBubble16:	"Sinon nous avons un service de \
+						kineuro-thérapie qui est tout à fait opérationnel et \
+						saura détendre vos neurones à base de massage relaxants \
+						pour que vous recouvriez toute vos pensée par le \
+						relâchement des tensions. Découvert en \
+						nouvelle-martinique le massage kineuro-thérapie a eu \
+						tellement de succès qu’un chef d’état l’a ancré dans \
+						la culture."
 	};
 });

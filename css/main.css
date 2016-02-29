@@ -93,15 +93,15 @@ body {
 }
 
 #page1 {
-	background-image: url(../img/background/scene1FondChambre.png);
+	background-image: url(../img/background/scene1FondChambre.jpg);
 }
 
 #page2 {
-	background-image: url(../img/background/scene3ExterieurNopex.png);
+	background-image: url(../img/background/scene3ExterieurNopex.jpg);
 }
 
 #page3 {
-	background-image: url(../img/background/scene4FondLaboratoire.png);
+	background-image: url(../img/background/scene4FondLaboratoire.jpg);
 }
 
 #page4 {
@@ -121,7 +121,7 @@ body {
 }
 
 #page8 {
-	background-image: url(../img/background/scene9ReflexionFond.png);
+	background-image: url(../img/background/scene9ReflexionFond.jpg);
 }
 
 .bubbleUpLeft {
@@ -300,4 +300,10 @@ body {
 
 .homeopathicPlants {
 	height: 107px;
+}
+
+.charFace {
+	position: absolute;
+	left: 310px;
+	top: 406px;
 }
