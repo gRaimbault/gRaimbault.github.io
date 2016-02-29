@@ -76,6 +76,7 @@ body {
 	height: 100%;
 	width: 100%;
 	background-color: black;
+	overflow: hidden;
 }
 
 .notDisplayed {
@@ -117,10 +118,6 @@ body {
 }
 
 #page7 {
-	background-image: url(../img/background/lastImageMockupp.jpg);
-}
-
-#page8 {
 	background-image: url(../img/background/scene9ReflexionFond.jpg);
 }
 
@@ -203,7 +200,7 @@ body {
     color: black;
 }
 
-.healObject {
+.healObject, .healObject2 {
 	position: absolute;
 	display: none;
 }
@@ -232,13 +229,26 @@ body {
 	height: 23px;
 }
 
+#endHealObjectZone .connectedGlass {
+	height: 27.83px;
+}
+
 .bionicEye {
 	height: 23px;
+}
+
+#endHealObjectZone .bionicEye {
+	height: 27.83px;
 }
 
 .flowerHat {
 	height: 104px;
 }
+
+#endHealObjectZone .flowerHat {
+	height: 125.84px;
+}
+
 
 .saladHair {
 	height: 104px;
@@ -246,19 +256,30 @@ body {
 	left: 117px;
 }
 
+#endHealObjectZone .saladHair {
+	height: 125.84px;
+	top: 150px;
+	left: 142px;
+}
+
 .troisDLung {
 	height:104px;
 }
+
+#endHealObjectZone .troisDLung {
+	height: 125.84px;
+}
+
 .prescription {
 	height: 104px;
 }
 
-.scalpel {
-	height: 104px;
+#endHealObjectZone .prescription {
+	height: 125.84px;
 }
 
-.outgrowthEars2{
-
+.scalpel {
+	height: 104px;
 }
 
 .cutaneousEruption{
@@ -267,10 +288,22 @@ body {
 	left: 158px;
 }
 
+#endHealObjectZone .cutaneousEruption {
+	height: 181.5px;
+	top: 198px;
+	left: 191px;
+}
+
 .pinkCheekbone{
 	height: 24px;
 	left: 162px;
 	top: 211px;
+}
+
+#endHealObjectZone .pinkCheekbone {
+	height: 29px;
+	left: 196px;
+	top: 255px;
 }
 
 .greenPea{
@@ -279,12 +312,18 @@ body {
 	top: 138px;
 }
 
-.clownLaught{
-
+#endHealObjectZone .greenPea {
+	height: 315px;
+	left: 73px;
+	top: 167px;
 }
 
 .pills {
-	height: 107px;
+	height: 104px;
+}
+
+#endHealObjectZone .pills {
+	height: 125.84px;
 }
 
 
@@ -294,16 +333,59 @@ body {
 	top: 184px;
 }
 
+#endHealObjectZone .outgrowthEars {
+	height: 67px;
+	left: 151px;
+	top: 223px;
+}
+
 .syringe {
-	height: 107px;
+	height: 104px;
+}
+
+#endHealObjectZone .syringe {
+	height: 125.84px;
 }
 
 .homeopathicPlants {
-	height: 107px;
+	height: 104px;
+}
+
+#endHealObjectZone .homeopathicPlants {
+	height: 125.84px;
 }
 
 .charFace {
 	position: absolute;
 	left: 310px;
 	top: 406px;
+}
+
+.chip {
+	height: 41px;
+}
+
+#endHealObjectZone .chip {
+	height: 50px;
+}
+
+.elevatedBrain {
+	height: 56px;
+	top: 131px;
+	left: 148px;
+}
+
+#endHealObjectZone .elevatedBrain {
+	height: 68px;
+	top: 159px;
+	left: 179px;
+}
+
+#endHealObjectZone {
+	height: 532px;
+	width: 532px;
+	position: absolute;
+	left: 258px;
+	top: 272px;	
+	z-index: 50;
 }

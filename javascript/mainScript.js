@@ -309,6 +309,9 @@ $(document).ready(function() {
 	};
 
 	function changeAnswerAndEnv(elementConserved) {
+		var topValue = null;
+		var leftValue = null;
+
 		if(elementConserved.hasClass('connectedGlass')) {
 			allTextExperience["fifthBubble3"] = "Très bon choix ! Malheureusement, vos yeux on tendance à fatiguer et se mettent à tourbillonner…";			 	
 			$( "#transformEnv .whirlpool" ).clone().appendTo( "#transformEnvSmall" );
@@ -316,11 +319,13 @@ $(document).ready(function() {
 		        opacity: 0,
 		        display: 'inline-block'     
 		    }).animate({opacity:0.6},600);
+		    positionCopyHealObject(".connectedGlass" );
 		}
 		if(elementConserved.hasClass('bionicEye')) {
 			allTextExperience["fifthBubble3"] = "Cet œil vous va à ravir ! Petite précision : nous avons tenu à vous mettre notre dernière mise à jour qui permet de visionner en direct les dernières nouveautés en terme de produits. …Non… nous n’appelons pas cela de la pollution visuelle !!";
 			$( "#transformEnv .advertisement" ).clone().appendTo( "#transformEnvSmall" );
 			$(".advertisement").fadeToggle(600);
+			positionCopyHealObject(".bionicEye" );
 		}
 
 
@@ -328,17 +333,20 @@ $(document).ready(function() {
 			allTextExperience["fifthBubble6"] = "C’est un très bon choix, en purifiant l’air ambiant vous contribuerez à purifier l’air de tout le monde. De plus, ce chapeau vous va à ravir!";
 			$( "#transformEnv .squall" ).clone().appendTo( "#transformEnvSmall" );
 			$(".squall").fadeToggle(600);
-			$(".pinkCheekbone").fadeToggle(600);
+			$(".pinkCheekbone").fadeToggle(600, positionCopyHealObject(".pinkCheekbone" ));
+			positionCopyHealObject(".flowerHat" );
 		}
 		if(elementConserved.hasClass('troisDLung')) {
 			allTextExperience["fifthBubble6"] = "Félicitations, votre troisième poumon fonctionne parfaitement! Votre teint a changé, vous semblez plus...coloré!";
 			$( "#transformEnv .fire" ).clone().appendTo( "#transformEnvSmall" );
 			$(".fire").fadeToggle(600);
+			positionCopyHealObject(".troisDLung" );
 		}
 
 
 		if(elementConserved.hasClass('prescription')) {
 			allTextExperience["fifthBubble10"] = "Vos prochaines séances de yoga ont été programmées. Je trouve vraiment cette solution trop longue, n’espérez pas un résultat immédiat.";
+			positionCopyHealObject(".prescription" );
 		}
 		if(elementConserved.hasClass('scalpelEmotion')) {
 			allTextExperience["fifthBubble10"] = "Vous avez fait le meilleur choix! Vous allez voir la vie en rose, déjà votre sourire ne vous quitte plus.";
@@ -351,15 +359,16 @@ $(document).ready(function() {
 		if(elementConserved.hasClass('pills')) {
 			allTextExperience["fifthBubble12"] = "Lors de votre homonculusation, un de vos sens s’est emballé et une excroissance s’est formée, vous pouvez potentiellement ressentir quelque déséquilibre.<br><br>Veuillez nous excusez par avance de la gêne occasionnée, mais vous vivrez plus longtemps grâce à nous !";
 			$( "#transformEnv .algae" ).clone().appendTo( "#transformEnvSmall" );
-			$(".greenPea").fadeToggle(600);
+			$(".greenPea").fadeToggle(600, positionCopyHealObject(".greenPea" ));
 			$(".algae").fadeToggle(600);
+			positionCopyHealObject(".pills" );
 			
 		}
 		if(elementConserved.hasClass('scalpelHomoncul')) {
 			allTextExperience["fifthBubble12"] = "Vous serez radié de toutes activités sportives et les effets de cette plante peuvent être visibles. Mais c’est une beauté nouvelle appréciée en 2045.";
 			$( "#transformEnv .ouotgrowthTree" ).clone().appendTo( "#transformEnvSmall" );
 			$(".ouotgrowthTree").fadeToggle(600);
-			$(".outgrowthEars").fadeToggle(600);
+			$(".outgrowthEars").fadeToggle(600, positionCopyHealObject(".outgrowthEars" ));
 			$(".scalpelHomoncul").fadeToggle(600);
 		}
 
@@ -367,15 +376,17 @@ $(document).ready(function() {
 		if(elementConserved.hasClass('syringe')) {
 			allTextExperience["fifthBubble14"] = "Je vous avertis sur les effets secondaires au cas où, le dosage nanotechnologique n’a pas été respecté lors de notre intervention. Vous allez peut être ressentir des irritations et constater des irruptions cutanées d’un orange vif.<br><br>Veuillez nous excusez par avance de la gêne occasionnée, mais vous vivrez plus longtemps grâce à nous !";
 			$( "#transformEnv .pollution" ).clone().appendTo( "#transformEnvSmall" );
-			$(".cutaneousEruption").fadeToggle(600);
+			$(".cutaneousEruption").fadeToggle(600, positionCopyHealObject(".cutaneousEruption" ));
 			$(".pollution").fadeToggle(600);
+			positionCopyHealObject(".syringe" );
 			
 		}
 		if(elementConserved.hasClass('homeopathicPlants')) {
 			allTextExperience["fifthBubble14"] = "Vous allez certainement développer une dépendance aux plantes prescrites. Vos cheveux  auront tendance à saladiser. Cet effet secondaire se diffusera sur la totalité du visage avec l’apparition de petits poids vert mais comestible, vous serez auto mangeable. Heureux ?";
 			$( "#transformEnv .plantsTrees" ).clone().appendTo( "#transformEnvSmall" );
 			$(".plantsTrees").fadeToggle(600);
-			$(".saladHair").fadeToggle(600);
+			$(".saladHair").fadeToggle(600, positionCopyHealObject(".saladHair" ));
+			positionCopyHealObject(".homeopathicPlants" );
 		}
 
 
@@ -383,17 +394,25 @@ $(document).ready(function() {
 			allTextExperience["fifthBubble17"] = "Votre cerveau reçoit trop d’informations à la fois, vous n’êtes pas capable de le supporter ce qui crée un embrouillement des données.";
 			$( "#transformEnv .tangleWords" ).clone().appendTo( "#transformEnvSmall" );
 			$(".tangleWords").fadeToggle(600);
-			
+			positionCopyHealObject(".chip" );
 		}
 		if(elementConserved.hasClass('scalpelKineuro')) {
 			allTextExperience["fifthBubble17"] = "C’est apaisant n’est-ce pas ?! Les effets indésirables sont légerement embêtant… Vouuus aaavez unnn gonnnnflemmmeeent duuu cerveauuuuu…";
 			$( "#transformEnv .tangleWords" ).clone().appendTo( "#transformEnvSmall" );
 			$(".tangleWords").fadeToggle(600);
-			$(".elevatedBrain").fadeToggle(600);
+			$(".elevatedBrain").fadeToggle(600, positionCopyHealObject(".elevatedBrain" ));
 			$(".scalpelKineuro").fadeToggle(600);
+			positionCopyHealObject(".elevatedBrain" );
 		}
 
 	};
+
+	function positionCopyHealObject(className) {
+		var topValue = $( className ).css("top").slice(0, -2) * 1.21 + "px";
+		var leftValue = $( className ).css("left").slice(0, -2) * 1.21 + "px";
+		$( className ).clone().appendTo( "#endHealObjectZone" );
+		$( "#endHealObjectZone " + className ).css({ "top": topValue, "left": leftValue, "display": "inline-block"});
+	}
 
 	var allTextExperience = {
 		firstBubble1: "\"C’est l’heure de se lever,<br> pour prendre ton petit\
