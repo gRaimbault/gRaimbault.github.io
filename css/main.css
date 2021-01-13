@@ -42,362 +42,361 @@ table {
 	border-spacing: 0;
 }
 
-
-
-
-
-
-
-
-@font-face{
-    font-family : "twCenMT";
-    src : url('fonts/TwCenMT.ttf');
+a {
+	text-decoration: none;
+	color: inherit;
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-html {
-	height: 768px;
-	width: 1024px;
+.clear {
+	clear: both;
 }
 
 body {
-	height: 100%;
-	width: 100%;
-	background-color: black;
-	overflow: hidden;
+	font-family: 'Montserrat', sans-serif;
+	color: #555;
 }
 
-.notDisplayed {
-	display: none;
+nav {
+	background-color: #5289ab;
+	border-color: #16a085;
+	padding-bottom: 20px;
+    padding-top: 20px;
+    text-transform: uppercase;
+    color: white;
 }
 
-.backgroundImg {
-	margin:0 auto;
+p {
+	font-size: 0.875em;
+    line-height: 1.7em;
+    margin-bottom: 25px;
 }
 
-.page{
-	height:100%;
-	width:100%;
-	background-size: cover;
+.container {
+	width: 80%;
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-#page1 {
-	background-image: url(../img/background/Scene1FondChambre.jpg);
+#mainTitle {
+	float: left;
+	font-weight: bold;
+	font-size: 20px;
+	letter-spacing: 2px;
 }
 
-#page2 {
-	background-image: url(../img/background/Scene3ExterieurNopex.jpg);
+#mainMenu {
+	font-size: 15px;
 }
 
-#page3 {
-	background-image: url(../img/background/Scene4FondLaboratoire.jpg);
+#mainMenu li.current-page {
+	color: #222222;
+}
+    
+#mainMenu li:hover{
+    color: #222222;
+	webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
-#page4 {
-	background-image: url(../img/background/scene5FondScanner.png);
+#nav-button {
+	position: relative;
+    float: right;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
-#page5 {
-	background-image: url(../img/background/fondJeu2.jpg);
-}
-
-#page6 {
-	background-image: url(../img/background/mockup6ficherecapitulative.jpg);
-}
-
-#page7 {
-	background-image: url(../img/background/Scene9ReflexionFond.jpg);
-}
-
-.bubbleUpLeft {
-	background-color: rgba(255,255,255,0.7);
-    width: 400px;
-    height: 120px;
-    position: absolute;
-    top: 54px;
-    left: 60px;
-    padding: 20px;
-    padding-bottom: 40px;
-    font-family: twCenMT;
-    color: black;
-}
-
-
-.nextTextButton {
-	height: 21px;
-    width: 11px;
-    position: absolute;
-    background: url(../img/rightArrow.png);
-    background-size: 100%;
-    bottom: 13px;
-    right: 16px;
-}
-
-#firstBubbleChoice1, #firstBubbleChoice3, #thirdBubbleChoice1{
-	bottom: -60px;
-    left: 0px;
-}
-
-#firstBubbleChoice2, #thirdBubbleChoice2 {
-	bottom: -100px;
-    left: 0px;
-}
-
-.bubbleChoice {
-	display: none;
-	padding: 2px 20px;
-	position: absolute;
-	background-color: rgba(255,255,255,0.7);
+#nav-button.buttonOn {
+	background-color: #333;
 }
 
 
-#dragDropZone {
-	width: 440px;
-    height: 440px;
-    position: absolute;
-    top: 246px;
-    left: 60px;
+#nav-button:hover {
+	background-color: #333;
 }
 
-#transformEnvSmall {
-    width: 453px;
-    height: 450px;
-    left: 511px;
-    position: absolute;
-    top: 199px;
+#nav-button .icon-bar{
+	display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #fff;
+    margin-top: 4px;
 }
 
-#transformEnv img{
-	left: 107px;
+.last-icon-bar {
+	margin-bottom: 4px;
 }
 
-.changeEnvCircle {
-	height: 100%;
-	position: absolute;
-	display: none;
+h1 {
+	font-size: 1.5em;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	font-weight: bold;
+	color: #333;
 }
 
-#validationButton {
-	display: none;
-	padding: 2px 20px;
-	position: absolute;
-	top: 700px;
-    left: 210px;
-	background-color: rgba(255,255,255,0.7);
-	font-family: twCenMT;
-    color: black;
+h3 {
+	font-size: 24px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+	font-weight: bold;
+	color: #333;
 }
 
-.healObject {
-	position: absolute;
-	display: none;
-	z-index: 66;
+.section-title {
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	margin-bottom: 40px;
+	margin-top: 40px;
 }
 
-.healObject2 {
-	position: absolute;
-	display: none;
+#presentation {
+	background-color: #f2f2f2;
+	padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
 }
 
-.choiceObject1 {
-	top: 65px;
-	left: 117px;
-}
-
-.choiceObject2 {
-	top: 65px;
-	left: 260px;
-}
-
-.choiceObject3 {
-	top: 8px;
-	left: 75px;
-}
-
-.choiceObject4 {
-	top: 8px;
-	left: 227px;
-}
-
-.connectedGlass {
-	height: 23px;
-}
-
-#endHealObjectZone .connectedGlass {
-	height: 27.83px;
-}
-
-.bionicEye {
-	height: 23px;
-}
-
-#endHealObjectZone .bionicEye {
-	height: 27.83px;
-}
-
-.flowerHat {
-	height: 104px;
-}
-
-#endHealObjectZone .flowerHat {
-	height: 125.84px;
-}
-
-
-.saladHair {
-	height: 104px;
-	top: 124px;
-	left: 117px;
-	z-index: 58;
-}
-
-#endHealObjectZone .saladHair {
-	height: 125.84px;
-	top: 150px;
-	left: 142px;
-}
-
-.troisDLung {
-	height:104px;
-}
-
-#endHealObjectZone .troisDLung {
-	height: 125.84px;
-}
-
-.prescription {
-	height: 104px;
-}
-
-#endHealObjectZone .prescription {
-	height: 125.84px;
-}
-
-.scalpel {
-	height: 104px;
-}
-
-.cutaneousEruption{
+#circleImg {
+	border-radius: 50%;
+	background-image: url("../img/photoFace2.jpg");
+	width: 150px;
 	height: 150px;
-	top: 164px;
-	left: 158px;
-	z-index: 54;
+	background-size: 113%;
+    background-position: 0px 48%;
+    margin: 0 auto;
 }
 
-#endHealObjectZone .cutaneousEruption {
-	height: 181.5px;
-	top: 198px;
-	left: 191px;
+.container-project-img-and-text {
+	text-align: center;
 }
 
-.pinkCheekbone{
-	height: 24px;
-	left: 162px;
-	top: 211px;
-	z-index: 56;
+.container-project-img {
+	line-height: 300px;
+	margin: 0 auto;
 }
 
-#endHealObjectZone .pinkCheekbone {
-	height: 29px;
-	left: 196px;
-	top: 255px;
+.project-img {
+	width: 100%;
+	vertical-align: middle;
 }
 
-.greenPea{
-	height: 260px;
-	left: 60px;
-	top: 138px;
-	z-index: 52;
+#aboutBlock {
+	text-align: justify;
 }
 
-#endHealObjectZone .greenPea {
-	height: 315px;
-	left: 73px;
-	top: 167px;
+#aboutBlock a:hover {
+	color: #5289ab;
 }
 
-.pills {
-	height: 104px;
+.contact-table {
+	display: table;
+	margin: 0 auto;
 }
 
-#endHealObjectZone .pills {
-	height: 125.84px;
+.contact-table-row {
+	display: table-row;
+}
+
+.contact-table-type {
+	display: table-cell;
+	text-align: right;
+	padding-bottom: 20px;
+}
+
+.contact-table-content {
+	display: table-cell;
+	padding-left: 20px;
+}
+
+.contact-table-content a:hover{
+	color: #5289ab;
 }
 
 
-.outgrowthEars {
-	height: 55px;
-	left: 125px;
-	top: 184px;
-	z-index: 62;
+#projectBlock {
+	text-align: justify;
 }
 
-#endHealObjectZone .outgrowthEars {
-	height: 67px;
-	left: 151px;
-	top: 223px;
+.project-title {
+	width: 70%;
+	margin: 0 auto;
+    display: block;
+    margin-bottom: 50px;
 }
 
-.syringe {
-	height: 104px;
+#hinaImgTitle {
+	margin-bottom: 0px;
+	margin-top: 20px;
 }
 
-#endHealObjectZone .syringe {
-	height: 125.84px;
+#nopexImgTitle {
+	margin-bottom: 0px;
+	margin-top: 20px;
 }
 
-.homeopathicPlants {
-	height: 104px;
+.work-image-and-caption {
+	margin: 0 auto;
+	margin-bottom: 30px;
+	text-align: center;
 }
 
-#endHealObjectZone .homeopathicPlants {
-	height: 125.84px;
+.work-image-and-caption .image-caption {
+	font-size: 13px;
+	width: 75%;
+    margin: 0 auto;
+    display: block;
 }
 
-.charFace {
-	position: absolute;
-	left: 310px;
-	top: 406px;
+.work-image-and-caption img{
+	width: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
 }
 
-.chip {
-	height: 41px;
+.work-video-and-caption {
+	text-align: center;
+	font-size: 13px;
+	margin-bottom: 30px;
 }
 
-#endHealObjectZone .chip {
-	height: 50px;
+.work-video-and-caption video {
+	margin-bottom: 5px;
 }
 
-.elevatedBrain {
-	height: 56px;
-	top: 131px;
-	left: 148px;
-	z-index: 60;
+#hinaVideo {
+	width: 100%;
+	height: 45vw;
 }
 
-#endHealObjectZone .elevatedBrain {
-	height: 68px;
-	top: 159px;
-	left: 179px;
+#wacfVideo {
+	width: 100%;
 }
 
-#endHealObjectZone {
-	height: 532px;
-	width: 532px;
-	position: absolute;
-	left: 258px;
-	top: 272px;	
-	z-index: 50;
+.paragraph-title {
+	font-size: 23px;
+	text-decoration: underline;
+	margin-bottom: 20px;
+}
+
+
+@media (min-width : 768px) {
+	#nav-button {
+		display: none;
+	}
+
+	#mainMenu {
+		float: right;
+	}
+
+	#mainMenu li {
+		float: left;
+	}
+
+	#mainMenu li {
+		padding: 0px 15px;
+	}
+
+	.work-image-and-caption {
+		width: 50%;
+	}
+
+	.container-project-img-and-text {
+		width: 33.3333333%;
+		float: left;
+	}
+}
+
+@media (max-width : 768px) {
+	#mainMenu {
+		clear: both;
+		border-top: solid 1px white;
+		overflow: hidden;
+		height: 100px;
+		webkit-transition: height 0.5s ease-in, border 0.5s ease-in;
+    	-o-transition: height 0.5s ease-in, border 0.5s ease-in;
+    	-ms-transition: height 0.5s ease-in, border 0.5s ease-in;
+    	-moz-transition: height 0.5s ease-in, border 0.5s ease-in;
+    	transition: height 0.5s ease-in, border 0.5s ease-in;
+	}
+
+	#mainMenu.collapse {
+		border: solid 0px white;
+		height: 1px;
+	}
+
+	#mainMenu li {
+		padding: 10px 0px;
+	}
+
+	#mainTitle {
+		width: 150px;
+	}
+
+	.container-project-img {
+		width: 100%;
+	}
+}
+
+@media (min-width : 1000px) {
+	.container-project-img {
+		height: 300px;
+	}
+}
+
+@media (min-width : 1200px) {
+
+	.section-title {
+		width: 50%;
+		margin-left: 25%;
+	}
+
+	.two-image-near {
+		float: left;
+		width: 48%;
+	}
+
+	.first-two-image-near {
+		margin-right: 20px;
+	}
+
+	.second-two-image-near {
+		float: right;
+	}
+
+	.hinaInBD2-image {
+		height: 260px;
+	}
+}
+
+.point-info-block {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+
+.info-to-know {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.info-content {
+	display: none;
+}
+
+.dd-ul {
+	
 }
