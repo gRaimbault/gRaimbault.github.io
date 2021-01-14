@@ -1,4 +1,4 @@
 # gRaimbault.github.io
 
 
-Ceci est une maquette pour un projet nommé NOPEX qui doit normalement être ouvert sur Ipad.
+Welcome to my personal website  - UNDER CONSTRUCTION
