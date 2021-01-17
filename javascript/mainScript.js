@@ -10,7 +10,7 @@ $(document).ready(function() {
 	});
 
 	$( "#mailToAdd" ).html( "raimbault.guillaume@gmail.com" );
-	//$( "#phoneToAdd" ).html( "06 72 19 25 03" );
+
 
 
 	//$('.info-to-know').hover($(this).next('.info-content').slideToggle(),$(this).next('.info-content').slideToggle());
