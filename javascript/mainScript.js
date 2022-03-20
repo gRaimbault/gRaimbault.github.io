@@ -9,8 +9,6 @@ $(document).ready(function() {
 		}
 	});
 
-	$( "#mailToAdd" ).html( "raimbault.guillaume@gmail.com" );
-
 
 
 	//$('.info-to-know').hover($(this).next('.info-content').slideToggle(),$(this).next('.info-content').slideToggle());
